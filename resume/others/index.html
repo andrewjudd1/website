@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Estimate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* 38618b */
+
+        body {
+            margin: 0;
+            padding: 0;
+            line-height: normal;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            color: #676767;
+
+
+        }
+
+        .mt-10 {
+            margin-top: 10px !important;
+        }
+
+        .mt-20 {
+            margin-top: 20px !important;
+        }
+
+        .mt-30 {
+            margin-top: 30px !important;
+        }
+
+        .mt-40 {
+            margin-top: 40px !important;
+        }
+
+        .mt-50 {
+            margin-top: 50px !important;
+        }
+
+        .mb-10 {
+            margin-bottom: 10px !important;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px !important;
+        }
+
+        .mb-30 {
+            margin-bottom: 30px !important;
+        }
+
+        .mb-40 {
+            margin-bottom: 40px !important;
+        }
+
+        .mb-50 {
+            margin-bottom: 50px !important;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        .row {
+            display: flex;
+
+        }
+
+        .row>.col-50 {
+            flex: 1;
+            width: 50%;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+        }
+
+        .header>div {
+            flex: 1;
+        }
+
+        .header .title {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .title img {
+            max-height: 50px;
+            width: auto;
+            margin-right: 10px;
+
+        }
+
+        .header .title h1 {
+            text-transform: uppercase;
+            font-size: 40px;
+            margin: 0;
+            color: #000000;
+        }
+
+        .header .agent-info {
+            margin-top: 10px;
+        }
+
+        .header .agent-info h2 {
+            color: #38618b;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: 0;
+
+        }
+
+        .header .agent-info p {
+            margin: 0;
+        }
+
+        .header .agent-info p a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .header .header-right .thumbnail img {
+            box-sizing: border-box;
+            border: 10px solid #f2f2f2;
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            height: 250px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .content-grid {
+            max-width: 800px;
+            margin: 10px auto 0;
+        }
+
+        .charts {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .data-row {
+            display: flex;
+            padding-bottom: 20px;
+            margin-top: 20px;
+            border-bottom: 2px solid #676767;
+        }
+
+        .data-row>div {
+            flex: 1;
+            padding: 0 30px;
+        }
+
+        .data-row>div h3 {
+            color: #38618b;
+            text-transform: uppercase;
+            margin: 10px 0;
+
+        }
+
+        .data-row>div h3:first-child {
+            margin-top: 0;
+        }
+
+        .data-table table {
+            border: none;
+            width: 100%;
+            font-size: 15px;
+        }
+
+        .data-table table table {
+            display: none;
+        }
+
+        .data-table table .total td {
+            font-weight: 800;
+            padding: 10px 0 0;
+
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .data-table table .total.no-padding td {
+            padding: 0;
+        }
+
+        .table-footer {
+            text-align: center;
+            border-top: 2px solid #676767;
+            margin: 20px 0;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 1em;
+            padding-top: 10px;
+            text-transform: uppercase;
+        }
+
+        .table-footer label {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .title-bar {
+            background: #38618b;
+            color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 10px;
+
+        }
+
+        .data-row>div.divider {
+            max-width: 2px;
+            background: #676767;
+            padding: 0;
+        }
+
+        .conventional-costs {
+            margin-top: 0px;
+        }
+
+
+        .conventional-costs .cost-wrapper {
+            display: flex;
+        }
+
+        .conventional-costs .cost-wrapper>div {
+            flex: 1;
+        }
+
+        .conventional-costs .cost-wrapper>div h3 {
+            color: #38618b;
+            text-transform: uppercase;
+            margin: 10px 0;
+
+        }
+
+        .conventional-costs .cost-wrapper>div h3:first-child {
+            margin-top: 0;
+        }
+
+        .conventional-costs .cost-wrapper>div table tr td:first-child {
+            width: 60%;
+        }
+
+        .conventional-costs .cost-wrapper>div table tr td:last-child {
+            width: 40%;
+        }
+
+
+        .conventional-costs .total-fixed-conventional-cost {
+            text-align: center;
+            margin-top: 30px;
+            font-weight: 800;
+            font-size: 20px;
+            color: #38618b;
+        }
+
+        .conventional-costs .total-fixed-conventional-cost span {
+            display: inline-block;
+            padding: 0 10px;
+        }
+
+        .disclaimer {
+            margin-top: 50px;
+            font-size: 11px;
+        }
+
+        .signatures {
+            max-width: 580px;
+            margin: 100px auto 0;
+        }
+
+        .signatures>.sign-wrap {
+            display: flex;
+        }
+
+        .signatures>div>div {
+            padding: 0 20px;
+            box-sizing: border-box;
+            flex: 1;
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+
+        .signatures>.sign-wrap label {
+            display: block;
+            border-top: 2px solid #ebebeb;
+            padding-top: 10px;
+            font-size: 14px;
+        }
+
+        .footer {
+            background: #ebedee;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+
+        .footer-wrap {
+            display: flex;
+
+        }
+
+        .footer-wrap>div {
+            flex: 1;
+        }
+
+        .footer .agent-contact {
+            display: flex;
+        }
+
+        .footer .agent-contact .agent-thumbnail {
+            max-width: 75px;
+            padding-right: 20px;
+
+        }
+
+        .footer .agent-contact .agent-thumbnail img {
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+
+        .footer .contact {
+            font-size: 14px;
+            margin: 5px 0;
+            color: #676767;
+        }
+
+        .footer .contact.name {
+            font-size: 18px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .footer .contact a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .footer .contact img {
+            width: 15px;
+            vertical-align: middle;
+            margin-right: 15px;
+        }
+
+        .footer .contact.name img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .f-right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .f-right .client-logo {
+            text-align: center;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        .f-right .client-logo div {
+            margin-bottom: 10px;
+        }
+
+        .f-right .client-logo img {
+            max-width: 150px
+        }
+
+        @media only screen and (max-width: 850px) {
+
+            .mt-10,
+            .mt-20,
+            .mt-30,
+            .mt-40,
+            .mt-50,
+            .mb-10,
+            .mb-20,
+            .mb-30,
+            .mb-40,
+            .mb-50 {
+                margin: 0px !important;
+            }
+
+            .mt-sm-10 {
+                margin-top: 10px !important;
+            }
+
+            .mt-sm-20 {
+                margin-top: 20px !important;
+            }
+
+            .mt-sm-30 {
+                margin-top: 30px !important;
+            }
+
+            .mt-sm-40 {
+                margin-top: 40px !important;
+            }
+
+            .mt-sm-50 {
+                margin-top: 50px !important;
+            }
+
+            .mb-sm-10 {
+                margin-bottom: 10px !important;
+            }
+
+            .mb-sm-20 {
+                margin-bottom: 20px !important;
+            }
+
+            .mb-sm-30 {
+                margin-bottom: 30px !important;
+            }
+
+            .mb-sm-40 {
+                margin-bottom: 40px !important;
+            }
+
+            .mb-sm-50 {
+                margin-bottom: 50px !important;
+            }
+
+            .header,
+            .charts,
+            .data-row,
+            .conventional-costs .cost-wrapper,
+            .signatures>.sign-wrap,
+            .footer-wrap {
+                display: block;
+
+            }
+
+            .f-right {
+                justify-content: left;
+                margin-top: 20px;
+            }
+
+            .row {
+                display: block;
+            }
+
+            .row>.col-50 {
+                width: auto;
+            }
+        }
+
+        @media print {
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                right: 0;
+            }
+
+            .charts {
+                display: flex;
+                margin-left: -20px;
+            }
+
+            .chart {
+                margin-left: -140px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <div class="title">
+                    <img src="https://theaxiomapp.com/Assets/AxiomNetSheets/arrow-blue.jpg" alt="" />
+                    <h1>Home Estimate</h1>
+                </div>
+                <div class="agent-info">
+                    <h2>Chad Fuller </h2>
+                    <p>(877) 546-8669</p>
+                    <p><a href="mailto:phxmls@khov.com">phxmls@khov.com</a></p>
+                </div>
+
+            </div>
+            <div class="header-right">
+                <div class="thumbnail">
+                    <img src="https://cdn.photos.sparkplatform.com/az/20240108170526808694000000-o.jpg" alt="Home" />
+                </div>
+
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="charts">
+                <div id="monthly_payment_chart"></div>
+                <div id="bring_to_close_chart"></div>
+            </div>
+        </div>
+        <div class="data-row">
+            <div>
+                <h3>Buyer's Conventional Loan Information</h3>
+                <div class="data-table">
+                    <table>
+                        <tr>
+                            <td>House Price</td>
+                            <td>$235,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>10% Down Payment</td>
+                            <td>$23,500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Loan At 6.625%</td>
+                            <td>$211,500.00</td>
+                        </tr>
+                        <tr>
+                            <td>APR</td>
+                            <td>7.156%</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="divider">
+
+            </div>
+            <div>
+                <h3>Prepaid Cost</h3>
+                <div class="data-table">
+                    <table width=`100%` class=`preFees`>
+                        <tr class=`preFeesRow`>
+                            <td class=`preFeesDesc`>Days Of Interest</td>
+                            <td class=`preFeesAmt`> 575.83</td>
+                        </tr>
+                        <tr class=`preFeesRow`>
+                            <td class=`preFeesDesc`>Months Of Insurance</td>
+                            <td class=`preFeesAmt`> 1,069.25</td>
+                        </tr>
+                        <tr class=`preFeesRow`>
+                            <td class=`preFeesDesc`>Months Of Taxes</td>
+                            <td class=`preFeesAmt`> 783.33</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="data-row">
+            <div>
+                <h3>Monthly Payment Info</h3>
+                <div class="data-table">
+                    <table>
+                        <tr>
+                            <td>Principal & Interest</td>
+                            <td>$1354.26</td>
+                        </tr>
+                        <tr>
+                            <td>Homeowners Ins.</td>
+                            <td>$76.38</td>
+                        </tr>
+                        <tr>
+                            <td>Monthly Property Tax</td>
+                            <td>$1</td>
+                        </tr>
+                        <tr>
+                            <td>pmi</td>
+                            <td>$79.31</td>
+                        </tr>
+                        <tr class="total">
+                            <td>Total PITI</td>
+                            <td>$1,706.00</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="divider">
+
+            </div>
+            <div>
+                <h3>Closing Cost</h3>
+                <div class="data-table">
+                    <table>
+                        <tr>
+                            <td>Fixed Cost</td>
+                            <td>$5,789.40</td>
+                        </tr>
+                        <tr>
+                            <td>Prepaid Cost</td>
+                            <td>$2,428.41</td>
+                        </tr>
+
+                        <tr class="total">
+                            <td>Total Prepaid Cost</td>
+                            <td>$8,217.81</td>
+                        </tr>
+                        <tr>
+                            <td>Down Payment</td>
+                            <td>$23,500.00</td>
+                        </tr>
+                        <tr class="total no-padding">
+                            <td>Bring To Closing</td>
+                            <td>$31,717.81</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="page-break">
+        <div class="container">
+            <div class="conventional-costs">
+                <div class="title-bar">
+                    Buyer's Conventional Closing Costs
+                </div>
+                <div class="cost-wrapper">
+                    <div class="cc-cost-left">
+                        <h3>Title Fees</h3>
+                        <div class="data-table">
+                            <table width=`100%` class=`titleFees`>
+                                <tr class=`titleFeesRow`>
+                                    <td class=`titleFeesDesc`>Cpl</td>
+                                    <td class=`titleFeesAmt`> 25.00</td>
+                                </tr>
+                                <tr class=`titleFeesRow`>
+                                    <td class=`titleFeesDesc`>Endorsements</td>
+                                    <td class=`titleFeesAmt`> 100.00</td>
+                                </tr>
+                                <tr class=`titleFeesRow`>
+                                    <td class=`titleFeesDesc`>Recording</td>
+                                    <td class=`titleFeesAmt`> 62.50</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="cc-cost-left">
+                        <h3>Lender Fees</h3>
+                        <div class="data-table">
+                            <table width=`100%` class=`lendFees`>
+                                <tr class=`lendFeesRow`>
+                                    <td class=`lendFeesDesc`>Appraisal</td>
+                                    <td class=`lendFeesAmt`> 450.00</td>
+                                </tr>
+                                <tr class=`lendFeesRow`>
+                                    <td class=`lendFeesDesc`>Credit Report</td>
+                                    <td class=`lendFeesAmt`> 60.00</td>
+                                </tr>
+                                <tr class=`lendFeesRow`>
+                                    <td class=`lendFeesDesc`>Home Inspection</td>
+                                    <td class=`lendFeesAmt`> 250.00</td>
+                                </tr>
+                                <tr class=`lendFeesRow`>
+                                    <td class=`lendFeesDesc`>Origination Fee</td>
+                                    <td class=`lendFeesAmt`> 2,115.00</td>
+                                </tr>
+                                <tr class=`lendFeesRow`>
+                                    <td class=`lendFeesDesc`>Processing Fee</td>
+                                    <td class=`lendFeesAmt`> 350.00</td>
+                                </tr>
+                                <tr class=`lendFeesRow`>
+                                    <td class=`lendFeesDesc`>Termite Inspection</td>
+                                    <td class=`lendFeesAmt`> 65.00</td>
+                                </tr>
+                                <tr class=`lendFeesRow`>
+                                    <td class=`lendFeesDesc`>Underwriting</td>
+                                    <td class=`lendFeesAmt`> 200.00</td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+
+                        <h3>Other Fees</h3>
+                        <div class="data-table">
+                            <table width=`100%` class=`otherFees`>
+                                <tr class=`otherFeesRow`>
+                                    <td class=`otherFeesDesc`>Escrow Fee</td>
+                                    <td class=`otherFeesAmt`> 915.00</td>
+                                </tr>
+                                <tr class=`otherFeesRow`>
+                                    <td class=`otherFeesDesc`>Home Protection</td>
+                                    <td class=`otherFeesAmt`> 400.00</td>
+                                </tr>
+                                <tr class=`otherFeesRow`>
+                                    <td class=`otherFeesDesc`>Title Policy</td>
+                                    <td class=`otherFeesAmt`> 796.90</td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="total-fixed-conventional-cost">
+                    TOTAL FIXED COSTS:<span>$5,789.40</span>
+                </div>
+
+            </div>
+            <div class="disclaimer">
+                <div class="text">
+                    This estimate is provided for informational purposes only, based upon the above proposed purchase
+                    price,
+                    type of financing and projected closing date, has been prepared to assist in computing costs.
+                    Amounts
+                    will vary depending upon differences between actual and estimated repairs that may occur in the
+                    transaction, assessments, liens, impound accounts, charges by lenders, escrow companies, title
+                    insurers
+                    and other service providers and other items. Not all liens may yet have been identified. Neither
+                    Broker,
+                    Agent nor PalmAgent guarantee, and assumes no responsibility for the accuracy, timeliness,
+                    correctness,
+                    or completeness of the above information. Any conclusions that users draw from the information
+                    presented
+                    here are their own and are not to be attributed to the Broker, Agent or PalmAgent. PalmAgent is not
+                    a
+                    financial institution engaged in mortgage lending and/or loan originations. The interest rates
+                    listed
+                    are for exemplary purposes only. All numbers are estimates and should be viewed as such. Total
+                    monthly
+                    payment identified includes PIT (Principal.
+                    Interest, Taxes and Insurance). Final numbers should be obtained from your lending institution prior
+                    to
+                    closing. By signing below client acknowledges that client has read, understands and agrees to this
+                    Disclaimer.
+                </div>
+                <div class="signatures">
+                    <div class="sign-wrap">
+                        <div class="s-left">
+                            <label>Sign (X)</label>
+
+                        </div>
+                        <div class="s-right">
+                            <label>Sign (Y)</label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="footer-wrap">
+                    <div class="f-left">
+                        <div class="agent-contact">
+                            <div class="agent-thumbnail">
+                                <img src="https://cdn.photos.sparkplatform.com/az/20141031000839011222000000.jpg"
+                                    alt="" />
+
+                            </div>
+                            <div class="agent-contact-info">
+                                <div class="contact name">
+                                    <img src="https://theaxiomapp.com/Assets/AxiomNetSheets/address-card-o.svg"
+                                        alt="" />Chad Fuller
+
+                                </div>
+                                <div class="contact">
+                                    <img src="https://theaxiomapp.com/Assets/AxiomNetSheets/phone.svg" alt="" /> (877)
+                                    546-8669
+
+                                </div>
+                                <div class="contact">
+                                    <img src="https://theaxiomapp.com/Assets/AxiomNetSheets/envelope.svg" alt="" /> <a
+                                        href="phxmls@khov.com "> "phxmls@khov.com "</a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="f-right">
+                        <div class="mls">
+                            <img src="https://theaxiomapp.com/Assets/AxiomNetSheets/mls.jpg" alt="" />
+                        </div>
+                        <div class="client-logo">
+                            <div>Title fees and<br />rates provided by</div>
+                            <img src="https://cdn.photos.sparkplatform.com/az/20141031000839011222000000.jpg " alt="" />
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script>
+            const validate_number = (num, dec) => {
+                if (num?.toString()?.replace(/[$€£¥,%]/g, '') === '-') {
+                    return 0
+                }
+                num = num?.toString()?.replace(/[$€£¥,%]/g, '')
+                num = num?.split('.')
+                num = `${num?.[0]?.replace(/[^0-9-]/g, '')}${num?.[1] ? `.${num?.[1]?.replace(/[^0-9-]/g, '')}` : ''}`
+                num = Number(num)
+                if (isNaN(num)) {
+                    return 0
+                }
+                if (dec >= 0) {
+                    num = Number(num.toFixed(dec))
+                }
+                return num
+            }
+            const home_price = validate_number("235,000.00");
+            const down_payment = validate_number("10");
+            const down_payment_total = validate_number("23,500.00");
+            const calc_fixed = validate_number("5,789.40");
+            const calc_prepaids = validate_number("2,428.41");
+            const prepaids = validate_number("5,789.40");
+            const p_i = validate_number("5,789.40");
+            const taxes = validate_number("1");
+            const insurance = validate_number("76.38");
+            const mi = validate_number("79.31");
+            const hoa = validate_number("");
+
+            const show_if_value = [{ value: seller_credit, id: 'seller_credit' }, { value: hoa, id: 'hoa' }, { value: misc, name: 'misc' }]
+            for (const item of show_if_value) {
+                if (!item?.value && item?.id) {
+                    document.getElementById(item.id).style.display = 'none'
+                }
+            }
+
+            const monthly_series = [p_i, taxes, insurance, mi, hoa]?.filter(item => item)
+            console.log(monthly_series?.filter(item => item).length)
+            const monthly_labels = ['P&I', 'Taxes', 'Insurance', 'pmi'?.toUpperCase() || '', 'HOA']?.slice(0, monthly_series?.filter(item => item).length)
+            const monthly_payment_labels_el = document.getElementById('monthly_payment_labels')
+            const bring_to_close_series = [down_payment_total, calc_prepaids, calc_fixed]?.filter(item => item)
+            const bring_to_close_labels = ['Down', 'Prepaids', 'Fixed', 'Misc', 'Seller Credit']?.slice(0, bring_to_close_series?.filter(item => validate_number(item) > 0).length)
+            const bring_to_close_labels_el = document.getElementById('bring_to_close_labels')
+
+            console.log(monthly_series)
+            const get_currency = (num, dec = 0) => {
+                if (isNaN(num)) {
+                    return ''
+                }
+                const curr_num = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: dec
+                }).format(num)
+                return curr_num
+            }
+            const colors = ['#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0']
+
+            const get_options = (data) => {
+                return options = {
+                    series: data?.series || [],
+                    labels: data?.labels || [],
+                    chart: {
+                        animations: { enabled: false },
+                        width: 350,
+                        height: 167,
+                        type: 'donut',
+                    },
+                    colors,
+                    plotOptions: {
+                        pie: {
+                            startAngle: -90,
+                            endAngle: 270,
+                            donut: {
+                                size: '85%',
+                                labels: {
+                                    show: true,
+                                    color: 'black',
+                                    total: {
+                                        show: true,
+                                        label: data?.total_label || '',
+                                        fontFamily: 'Montserrat", sans-serif',
+                                        fontSize: 12,
+                                        formatter: function (w) {
+                                            return get_currency(w.globals.seriesTotals.reduce((a, b) => {
+                                                return a + b
+                                            }, 0))
+                                        }
+                                    },
+
+                                }
+
+                            },
+                        },
+
+
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    fill: {
+                        type: 'gradient',
+                    },
+                    legend: {
+                        show: true,
+                        formatter: function (val, opts) {
+                            return val + " - " + get_currency(opts.w.globals.series[opts.seriesIndex])
+                        }
+                    },
+                    title: {
+                        text: ''
+                    },
+                    responsive: [{
+                        breakpoint: 480,
+                        options: {
+                            chart: {
+                                width: 200
+                            },
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }]
+                };
+            }
+
+            let monthly_chart = new ApexCharts(document.querySelector("#monthly_payment_chart"), get_options({ series: monthly_series, labels: monthly_labels, total_label: 'Monthly Payment' }));
+            console.log('monthly_chart', monthly_chart)
+
+            let bring_to_close_chart = new ApexCharts(document.querySelector("#bring_to_close_chart"), get_options({ series: bring_to_close_series, labels: bring_to_close_labels, total_label: 'Bring To Close' }));
+            bring_to_close_chart.render();
+            monthly_chart.render();
+        </script>
+</body>
+
+</html>
