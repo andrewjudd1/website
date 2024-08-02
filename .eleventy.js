@@ -7,6 +7,7 @@ module.exports = function (eleventyConfig) {
         dir: {
             input: ".",
             output: "_site",
+            includes: "snippets"
         }
     };
 };
