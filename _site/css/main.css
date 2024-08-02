@@ -8,7 +8,14 @@ body {
   background-color: #fff;
   color: #333;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
+}
+.home_main_wrapper {
+  display: flex;
+  justify-content: center;
+}
+.home_main {
+  width: 800px;
 }
 
 .nav-container {
@@ -22,4 +29,24 @@ body {
   flex-wrap: wrap;
   gap: 30px;
   list-style: none;
+}
+
+.xlg_txt {
+  font-size: 28px;
+}
+
+.lg_txt {
+  font-size: 24px;
+}
+
+.md_txt {
+  font-size: 18px;
+}
+
+.sm_txt {
+  font-size: 15px;
+}
+
+.xsm_txt {
+  font-size: 12px;
 }
