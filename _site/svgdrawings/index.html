@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Drawings</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<style>
+  .container {}
+</style>
+
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+
+  <body>
+    <nav class="nav-container">
+      <ul class="nav-wrapper">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/ai/pdfreader">PDF Reader</a>
+        </li>
+        <li>
+          <a href="/resume">Resume</a>
+        </li>
+        <li>
+          <a href="/svgdrawings">SVG Drawings</a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+
+</html>
+  <div class="home_main_wrapper">
+    <main class="home_main">
+      <div>
+        <h1>My SVG Drawings</h1>
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          
+
+          <svg viewBox="0 0 110 140" width="55" height="70">
+            <title>Cat</title>
+            <desc>Stick Figure of a Cat</desc>
+            <polyline points="25 35, 30 10, 35 30" stroke="black" fill="none" />
+            <polyline points="85 35, 80 10, 75 30" stroke="black" fill="none" />
+            <circle cx="55" cy='75' r='50' style="stroke: black; fill: none;" />
+            <circle cx='42.5' cy='50' r='5' fill='#339933' />
+            <circle cx='68.5' cy='50' r='5' fill='#339933' />
+            <line x1='33' x2='55' y1='40' y2='40' />
+            <g id="whiskers">
+              <line x1='68' x2='100' y1='70' y2='65' stroke='black' />
+              <line x1='68' x2='100' y1='70' y2='75' stroke='black' />
+            </g>
+            <use xlink:href='#whiskers' transform='rotate(180, 55, 70)' />
+            <polyline points="35 85, 40 95, 40 95, 70 95, 75 85" stroke="black" fill="none" />
+          </svg>
+
+          <svg viewBox="0 0 10 10" width="50" height="50">
+            <title>Building outline</title>
+            <desc>Basic outline of building</desc>
+            <polyline points="0 10, 0 4, 5 0, 10 4, 10 10, 0 10" fill="none" stroke="black" />
+          </svg>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
