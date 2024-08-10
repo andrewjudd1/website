@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/lz-string@1.5.0/libs/lz-string.min.js"></script>
+    <style>
+        .circle {
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: round;
+        }
+
+        .background {
+            stroke: #ddd;
+        }
+
+        .progress {
+            stroke: #4caf50;
+            /* Color of the stroke */
+        }
+
+
+
+
+
+        .slider-container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider-wrapper {
+            margin: 20px 0;
+            position: relative;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            background: #ddd;
+            border-radius: 5px;
+            outline: none;
+            opacity: 0.8;
+            transition: opacity .15s ease-in-out;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #4caf50;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #4caf50;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .slider-labels span {
+            position: absolute;
+            bottom: -20px;
+            /* Adjust based on label height */
+            font-size: 14px;
+        }
+
+        .slider-value {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+  <nav class="nav-container">
+    <ul class="nav-wrapper">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/ai/pdfreader">PDF Reader</a>
+      </li>
+      <li>
+        <a href="/relationship">Relationship Ratio</a>
+      </li>
+      <li>
+        <a href="/resume">Resume</a>
+      </li>
+      <li>
+        <a href="/svgdrawings">SVG Drawings</a>
+      </li>
+    </ul>
+  </nav>
+</body>
+
+</html>
+    <div class="home_main_wrapper">
+        <main class="home_main">
+            <h1>Relationship Tracker</h1>
+            <p class="lg_txt">Try to get a 3:1 ratio!
+            </p>
+            <p>Record your relationship each day and keep track of how your days are going.</p>
+            <div>
+                <div class="slider-container">
+                    <h1>Rate Your Relationship</h1>
+                    <div class="slider-wrapper">
+                        <input type="range" id="relationshipSlider" min="1" max="10" value="5" step="1" />
+                        <div class="slider-labels" id="sliderLabels"></div>
+                        <div id="sliderValue" class="slider-value">5</div>
+                    </div>
+                </div>
+            </div>
+            <svg id="svg" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background Circle -->
+                <circle class="circle background" cx="150" cy="150" r="100" />
+
+                <!-- Progress Circle -->
+                <circle id="progressCircle" class="circle progress" cx="150" cy="150" r="100" />
+                <foreignObject x="50" y="50" width="200" height="200">
+                    <div xmlns="http://www.w3.org/1999/xhtml"
+                        style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">
+                        <div style="text-align: center;">
+                            <h1 style="margin: 0;">3 : 1</h1>
+                        </div>
+                    </div>
+                </foreignObject>
+            </svg>
+
+            <script>
+                function updateCircleStroke(percentage) {
+                    const circle = document.getElementById('progressCircle');
+                    const radius = circle.getAttribute('r');
+                    const circumference = 2 * Math.PI * radius;
+
+                    // Ensure the percentage is within 0 to 100
+                    percentage = Math.max(0, Math.min(percentage, 100));
+
+                    // Calculate the dash offset based on the percentage
+                    const offset = circumference * (1 - percentage / 100);
+
+                    // Set the stroke-dasharray and stroke-dashoffset properties
+                    circle.style.strokeDasharray = circumference;
+                    circle.style.strokeDashoffset = offset;
+                }
+
+                // Example usage: Update the stroke to 75%
+
+                updateCircleStroke((5 / 10) * 100);
+            </script>
+        </main>
+    </div>
+    <script type="module">
+        import utils from '/js/utils.mjs'
+        utils.set_storage('name', 'andrew')
+
+        const slider = document.getElementById('relationshipSlider');
+        const sliderValue = document.getElementById('sliderValue');
+        const sliderLabels = document.getElementById('sliderLabels');
+
+        function updateSliderValue() {
+            sliderValue.textContent = slider.value;
+        }
+
+        function generateLabels() {
+            sliderLabels.innerHTML = '';
+            const min = parseInt(slider.min, 10);
+            const max = parseInt(slider.max, 10);
+            const step = parseInt(slider.step, 10);
+            // set labels distance in an object
+            for (let i = min; i <= max; i += step) {
+                const label = document.createElement('span');
+                label.textContent = i;
+                const percentage = ((i - min) / (max - min)) * 100;
+                label.style.left = `${percentage - 1}%`;
+                sliderLabels.appendChild(label);
+            }
+        }
+
+        slider.addEventListener('input', updateSliderValue);
+
+        // Initialize the slider labels and value display
+        generateLabels();
+        updateSliderValue();
+
+
+    </script>
+</body>
+
+</html>

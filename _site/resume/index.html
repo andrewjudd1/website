@@ -1,494 +1,524 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Andrew Judd Resume</title>
-        <link rel="stylesheet" href="/css/main.css">
-        <style>
-            @media print {
-                @page {
-                    margin: 10px;
-                }
-                body {
-                    margin: 1.6cm;
-                }
-                .resume-nav {
-                    display: none;
-                }
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Judd Resume</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        @media print {
+            @page {
+                margin: 10px;
             }
-            .container {
-                max-width: 900px;
-                max-height: 1056px;
-                margin: 0 auto;
-                /* padding: 20px; */
-                border-radius: 5px;
-                /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
-                background-color: #fff;
+
+            body {
+                margin: 1.6cm;
             }
-            .resume-header {
-                text-align: start;
-                margin-bottom: 10px;
+
+            .resume-nav {
+                display: none;
             }
-            .resume-h1 {
-                font-size: 36px;
-                margin: 0;
-                padding: 0;
-            }
-            .resume-h2 {
-                font-size: 24px;
-                margin: 0;
-                padding: 0;
-            }
-            .resume-h3 {
-                font-size: 18px;
-                margin: 0;
-                padding: 0;
-            }
-            .resume-p {
-                margin: 0;
-                padding: 0;
-            }
-            .section {
-                margin-bottom: 30px;
-            }
-            .education,
-            .experience,
-            .skills,
-            .projects {
-                margin-bottom: 40px;
-            }
-            .resume-ul {
-                margin: 5px 0;
-                padding-left: 20px;
-                list-style-type: square;
-            }
-            .resume-footer {
-                text-align: center;
-                color: #888;
-                margin-top: 30px;
-            }
-            .resume-hr {
-                border: 0;
-                height: 1px;
-                background-color: #ddd;
-                margin: 20px 0;
-            }
-            .resume-link {
-                text-decoration: none;
-                color: #0056b3;
-                color: hsl(0, 68%, 45%);
-                font-weight: 600;
-                transition: color 0.3s ease;
-            }
-            .resume-link:hover {
-                color: hsl(0, 66%, 36%);
-            }
-            .card_shadow {
-                box-shadow: rgba(0, 0, 0, 0.09) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
-            }
-            .timeline {
-                position: relative;
-                display: flex;
-                align-items: center;
-                min-width: 50px;
-                /* background-color: hsl(0, 0%, 0%); */
-            }
-            .line {
-                position: absolute;
-                border-radius: 10px;
-                height: 100%;
-                width: 10px;
-                left: 20;
-            }
-            .circle {
-                z-index: 10;
-                position: absolute;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: hsl(0, 0%, 70%);
-                width: 25px;
-                height: 25px;
-                left: -8;
-                color: white;
-                border-radius: 50%;
-            }
+        }
+
+        .container {
+            max-width: 900px;
+            max-height: 1056px;
+            margin: 0 auto;
+            /* padding: 20px; */
+            border-radius: 5px;
+            /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+            background-color: #fff;
+        }
+
+        .resume-header {
+            text-align: start;
+            margin-bottom: 10px;
+        }
+
+        .resume-h1 {
+            font-size: 36px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .resume-h2 {
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .resume-h3 {
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .resume-p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .education,
+        .experience,
+        .skills,
+        .projects {
+            margin-bottom: 40px;
+        }
+
+        .resume-ul {
+            margin: 5px 0;
+            padding-left: 20px;
+            list-style-type: square;
+        }
+
+        .resume-footer {
+            text-align: center;
+            color: #888;
+            margin-top: 30px;
+        }
+
+        .resume-hr {
+            border: 0;
+            height: 1px;
+            background-color: #ddd;
+            margin: 20px 0;
+        }
+
+        .resume-link {
+            text-decoration: none;
+            color: #0056b3;
+            color: hsl(0, 68%, 45%);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .resume-link:hover {
+            color: hsl(0, 66%, 36%);
+        }
+
+        .card_shadow {
+            box-shadow: rgba(0, 0, 0, 0.09) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
+        }
+
+        .timeline {
+            position: relative;
+            display: flex;
+            align-items: center;
+            min-width: 50px;
+            /* background-color: hsl(0, 0%, 0%); */
+        }
+
+        .line {
+            position: absolute;
+            border-radius: 10px;
+            height: 100%;
+            width: 10px;
+            left: 20;
+        }
+
+        .circle {
+            z-index: 10;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: hsl(0, 0%, 70%);
+            width: 25px;
+            height: 25px;
+            left: -8;
+            color: white;
+            border-radius: 50%;
+        }
+
+        .links-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 10px;
+            padding: 0 50px;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .content-display-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin: 0;
+            min-width: 450px;
+            max-width: 500px;
+        }
+
+        .right-side-container {
+            margin: 25px 0 0 30px
+        }
+
+        .right-side-box {
+            max-width: 500px;
+        }
+
+        .sample-projects-container {
+            width: 100%;
+            border-top: 1px solid lightgray;
+            margin-top: 20px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        @media only screen and(max-width: 805px) {
             .links-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: start;
-                gap: 10px;
-                padding: 0 50px;
+                flex-direction: column;
+                padding: 0;
             }
+
+            .timeline {
+                display: none;
+            }
+
             .content-container {
                 display: flex;
-                flex-direction: row;
-            }
-            .content-display-container {
-                display: flex;
                 flex-direction: column;
-                justify-content: space-around;
-                margin: 0;
-                min-width: 450px;
-                max-width: 500px;
             }
+
+            .content-display-container {
+                min-width: 0;
+            }
+
             .right-side-container {
-                margin: 25px 0 0 30px
+                margin: 25px 0 0
             }
-            .right-side-box {
-                max-width: 500px;
-            }
+
             .sample-projects-container {
-                width: 100%;
-                border-top: 1px solid lightgray;
-                margin-top: 20px;
-                padding-top: 20px;
-                display: flex;
-                justify-content: space-around;
+                flex-direction: column;
             }
-            @media only screen and(max-width: 805px) {
-                .links-container {
-                    flex-direction: column;
-                    padding: 0;
-                }
-                .timeline {
-                    display: none;
-                }
-                .content-container {
-                    display: flex;
-                    flex-direction: column;
-                }
-                .content-display-container {
-                    min-width: 0;
-                }
-                .right-side-container {
-                    margin: 25px 0 0
-                }
-                .sample-projects-container {
-                    flex-direction: column;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <div class="resume-nav" style="margin-top: 16px;">
-            <!DOCTYPE html>
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume-nav" style="margin-top: 16px;">
+        <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header</title>
-    <link rel="stylesheet" href="../css/main.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
 
-  <body>
-    <nav class="nav-container">
-      <ul class="nav-wrapper">
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/ai/pdfreader">PDF Reader</a>
-        </li>
-        <li>
-          <a href="/resume">Resume</a>
-        </li>
-        <li>
-          <a href="/svgdrawings">SVG Drawings</a>
-        </li>
-      </ul>
-    </nav>
-  </body>
+<body>
+  <nav class="nav-container">
+    <ul class="nav-wrapper">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/ai/pdfreader">PDF Reader</a>
+      </li>
+      <li>
+        <a href="/relationship">Relationship Ratio</a>
+      </li>
+      <li>
+        <a href="/resume">Resume</a>
+      </li>
+      <li>
+        <a href="/svgdrawings">SVG Drawings</a>
+      </li>
+    </ul>
+  </nav>
+</body>
 
 </html>
-        </div>
-        <div class="container">
-            <header class="resume-header">
-                <div style="display: flex; flex-direction: column; justify-content: start;">
-                    <h1 class="resume-h1">Andrew Judd</h1>
-                    <h2 class="resume-h2" style="margin: -10px 0 10px 0;">Software Developer</h2>
-                </div>
-                <div class="links-container">
-                    <div style="display: flex; flex-direction: column;">
-                        <div style="display: flex; gap: 10px; align-items: center;">
-                            <img src='../assets/line/business/mail-line.png' width="16px" height="16px"/>
-                            <a class="resume-link" target="_blank" href="mailto:andrewmjudd1@gmail.com">andrewmjudd1@gmail.com</a>
-                        </div>
-                        <div style="display: flex; gap: 10px; align-items: center;">
-                            <img src='../assets/line/business/global-line.png' width="16px" height="16px"/>
-                            <a class="resume-link" target="_blank" href="https://thisandrewjudd.netlify.app">thisandrewjudd.com</a>
-                        </div>
+    </div>
+    <div class="container">
+        <header class="resume-header">
+            <div style="display: flex; flex-direction: column; justify-content: start;">
+                <h1 class="resume-h1">Andrew Judd</h1>
+                <h2 class="resume-h2" style="margin: -10px 0 10px 0;">Software Developer</h2>
+            </div>
+            <div class="links-container">
+                <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <img src='../assets/line/business/mail-line.png' width="16px" height="16px" />
+                        <a class="resume-link" target="_blank"
+                            href="mailto:andrewmjudd1@gmail.com">andrewmjudd1@gmail.com</a>
                     </div>
-                    <div style="display: flex; flex-direction: column;">
-                        <div style="display: flex; gap: 10px; align-items: center;">
-                            <img src='../assets/line/device/smartphone-line.png' width="16px" height="16px"/>
-                            <a class="resume-link" target="_blank" href="sms:+15209296520">(520) 929-6520</a>
-                        </div>
-                        <div style="display: flex; gap: 10px; align-items: center;">
-                            <img src='../assets/line/map/map-pin-line.svg' width="16px" height="16px"/>
-                            <p class="resume-p">Willcox, AZ</p>
-                        </div>
-                    </div>
-                    <div style="display: flex; flex-direction: column;">
-                        <div style="display: flex; gap: 10px; align-items: center;">
-                            <img src='../assets/fill/logos/github-fill.png' width="16px" height="16px"/>
-                            <a class="resume-link" target="_blank" href="https://github.com/andrewjudd1">Github</a>
-                        </div>
-                        <div style="display: flex; gap: 10px; align-items: center;">
-                            <img src='../assets/fill/logos/linkedin-box-fill.png' width="16px" height="16px"/>
-                            <a class="resume-link" target="_blank" href="https://linkedin.com/in/andrewmjudd">LinkedIn</a>
-                        </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <img src='../assets/line/business/global-line.png' width="16px" height="16px" />
+                        <a class="resume-link" target="_blank"
+                            href="https://thisandrewjudd.netlify.app">thisandrewjudd.com</a>
                     </div>
                 </div>
-            </header>
-            <hr class="resume-hr">
-            <div style="display: flex;">
-                <div id="timeline" class="timeline"></div>
-                <div class="content-container">
-                    <div style="display: flex;">
-                        <div class="content-display-container">
-                            <div>
-                                <span style="font-size: 25px; font-weight: bold">Work Experience</span>
-                            </div>
+                <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <img src='../assets/line/device/smartphone-line.png' width="16px" height="16px" />
+                        <a class="resume-link" target="_blank" href="sms:+15209296520">(520) 929-6520</a>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <img src='../assets/line/map/map-pin-line.svg' width="16px" height="16px" />
+                        <p class="resume-p">Willcox, AZ</p>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <img src='../assets/fill/logos/github-fill.png' width="16px" height="16px" />
+                        <a class="resume-link" target="_blank" href="https://github.com/andrewjudd1">Github</a>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <img src='../assets/fill/logos/linkedin-box-fill.png' width="16px" height="16px" />
+                        <a class="resume-link" target="_blank" href="https://linkedin.com/in/andrewmjudd">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <hr class="resume-hr">
+        <div style="display: flex;">
+            <div id="timeline" class="timeline"></div>
+            <div class="content-container">
+                <div style="display: flex;">
+                    <div class="content-display-container">
+                        <div>
+                            <span style="font-size: 25px; font-weight: bold">Work Experience</span>
+                        </div>
+                        <div class=""
+                            style="display:flex; flex-direction: column; justify-content: start; align-items: start; border-top: 2px solid black">
+                            <h2 class="resume-h2" style="font-size: 18px; margin-top: 5px; ">Software Developer</h2>
+                            <h2 class="resume-h2" style="font-size: 15px;">AXIOM</h2>
                             <div
-                                class=""
-                                style="display:flex; flex-direction: column; justify-content: start; align-items: start; border-top: 2px solid black">
-                                <h2 class="resume-h2" style="font-size: 18px; margin-top: 5px; ">Software Developer</h2>
-                                <h2 class="resume-h2" style="font-size: 15px;">AXIOM</h2>
-                                <div style="border-top: 2px solid hsl(280, 60%, 60%); display: flex; align-items: center; gap: 5px; font-size: 13px;">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        fill="currentColor"
-                                        class="bi bi-calendar-event"
-                                        viewbox="0 0 16 16">
-                                        <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
-                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1
-                                        2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
-                                    </svg>
-                                    <p class="resume-p" id="">January 2023</p>
-                                    <p class="resume-p">&nbsp; - &nbsp;</p>
-                                    <p class="resume-p" id="time_driggs_title">Present</p>
-                                </div>
-                                <div style="display: flex; margin: 0 0 0 20px; justify-content: center; font-size: 12px;">
-                                    <ul class="resume-ul">
-                                        <li>Built Real Estate Calculators in React using recursive algorithms, encapsulation, reusable components, and proven
-                                            design patterns.
-                                            <strong>Thousands of page hits a
-                                                month.</strong>
-                                        </li>
-                                        <li>Implemented several Node.js RESTful API's, as well as integrated with multiple MLS (Real Estate) APIS, banks,
-                                            delivery services, and social media APIS.
-                                            <strong>Millions of records of
-                                                data.</strong>
-                                        </li>
-                                        <li>Built an application from the ground up with Auth0, Oracle, PL/SQL, Node.js/Express, and React. Used
-                                            by
-                                            <strong>Hundreds of Real Estate
-                                                Agents</strong>
-                                            from the areas my company serves every month.</li>
-                                    </ul>
-                                </div>
+                                style="border-top: 2px solid hsl(280, 60%, 60%); display: flex; align-items: center; gap: 5px; font-size: 13px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-calendar-event" viewbox="0 0 16 16">
+                                    <path
+                                        d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1
+                                        2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                </svg>
+                                <p class="resume-p" id="">January 2023</p>
+                                <p class="resume-p">&nbsp; - &nbsp;</p>
+                                <p class="resume-p" id="time_driggs_title">Present</p>
                             </div>
-                            <div
-                                class=""
-                                style="display:flex; flex-direction: column; justify-content: start; align-items: start; border-top: 1px solid darkgray;">
-                                <h2 class="resume-h2" style="font-size: 18px; margin-top: 5px;">Database Developer</h2>
-                                <h2 class="resume-h2" style="font-size: 15px;">Driggs Title Agency</h2>
-                                <div style="border-top: 2px solid hsl(190, 60%, 60%); display: flex; align-items: center; gap: 5px; font-size: 13px;">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        fill="currentColor"
-                                        class="bi bi-calendar-event"
-                                        viewbox="0 0 16 16">
-                                        <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
-                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1
-                                        2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
-                                    </svg>
-                                    <p class="resume-p" id="">March 2022
-                                    </p>
-                                    <p class="resume-p">&nbsp; - &nbsp;</p>
-                                    <p class="resume-p" id="time_driggs_title">Present</p>
-                                </div>
-                                <div style="display: flex; margin: 0 0 0 10px; justify-content: start; font-size: 12px;">
-                                    <ul class="resume-ul">
-                                        <li>Developed a Node.js api to handle wires, and finiancial disbursements. Auto-reconciled accounts
-                                            and
-                                            <strong>saved the finance department over 20 hours per
-                                                week</strong>,
-                                                                                                reduced human errors, and
-                                            <strong>processed millions of dollars</strong>
-                                            a month.
-                                        </li>
-                                        <li>Built a high-performance Marketing API in Node.js integrating Twilio and SendGrid, capable of
-                                            sending
-                                            <strong>thousands of emails and texts per minute.
-                                            </strong>
-                                            Reached
-                                            <strong>over 90,000 real estate
-                                                                                                agents</strong>
-                                            with
-                                            <strong>dynamic
-                                                                                                                                            messaging</strong>
-                                            templates. generated
-                                            <strong>thousands of dollars in monthly
-                                                                                                revenue</strong>.
-                                        </li>
-                                        <li>Currently developing an API integrating
-                                            <strong>image and PDF processing with
-                                                AI</strong>
-                                            to
-                                                                                                                                enhance
-                                            <strong>searchability of Escrow and Title documents.</strong>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div style="display: flex; margin: 0 0 0 20px; justify-content: center; font-size: 12px;">
+                                <ul class="resume-ul">
+                                    <li>Built Real Estate Calculators in React using recursive algorithms,
+                                        encapsulation, reusable components, and proven
+                                        design patterns.
+                                        <strong>Thousands of page hits a
+                                            month.</strong>
+                                    </li>
+                                    <li>Implemented several Node.js RESTful API's, as well as integrated with multiple
+                                        MLS (Real Estate) APIS, banks,
+                                        delivery services, and social media APIS.
+                                        <strong>Millions of records of
+                                            data.</strong>
+                                    </li>
+                                    <li>Built an application from the ground up with Auth0, Oracle, PL/SQL,
+                                        Node.js/Express, and React. Used
+                                        by
+                                        <strong>Hundreds of Real Estate
+                                            Agents</strong>
+                                        from the areas my company serves every month.
+                                    </li>
+                                </ul>
                             </div>
+                        </div>
+                        <div class=""
+                            style="display:flex; flex-direction: column; justify-content: start; align-items: start; border-top: 1px solid darkgray;">
+                            <h2 class="resume-h2" style="font-size: 18px; margin-top: 5px;">Database Developer</h2>
+                            <h2 class="resume-h2" style="font-size: 15px;">Driggs Title Agency</h2>
                             <div
-                                class=""
-                                style="display:flex; flex-direction: column; justify-content: start; align-items: start; border-top: 1px solid darkgray;">
-                                <h2 class="resume-h2" style="font-size: 18px; margin-top: 5px;">Web Developer Intern</h2>
-                                <h2 class="resume-h2" style="font-size: 15px;">GoViably</h2>
-                                <div style="border-top: 2px solid hsl(100, 60%, 60%); display: flex; align-items: center; gap: 5px; font-size: 13px;">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        fill="currentColor"
-                                        class="bi bi-calendar-event"
-                                        viewbox="0 0 16 16">
-                                        <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
-                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1
-                                        2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
-                                    </svg>
-                                    <p class="resume-p" id="">July 2021
-                                    </p>
-                                    <p class="resume-p">&nbsp; - &nbsp;</p>
-                                    <p class="resume-p" id="">
-                                        March 2022</p>
-                                    <!-- <div style="margin-left: 30px; display: flex; align-items: center;"> <img
+                                style="border-top: 2px solid hsl(190, 60%, 60%); display: flex; align-items: center; gap: 5px; font-size: 13px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-calendar-event" viewbox="0 0 16 16">
+                                    <path
+                                        d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1
+                                        2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                </svg>
+                                <p class="resume-p" id="">March 2022
+                                </p>
+                                <p class="resume-p">&nbsp; - &nbsp;</p>
+                                <p class="resume-p" id="time_driggs_title">Present</p>
+                            </div>
+                            <div style="display: flex; margin: 0 0 0 10px; justify-content: start; font-size: 12px;">
+                                <ul class="resume-ul">
+                                    <li>Developed a Node.js api to handle wires, and finiancial disbursements.
+                                        Auto-reconciled accounts
+                                        and
+                                        <strong>saved the finance department over 20 hours per
+                                            week</strong>,
+                                        reduced human errors, and
+                                        <strong>processed millions of dollars</strong>
+                                        a month.
+                                    </li>
+                                    <li>Built a high-performance Marketing API in Node.js integrating Twilio and
+                                        SendGrid, capable of
+                                        sending
+                                        <strong>thousands of emails and texts per minute.
+                                        </strong>
+                                        Reached
+                                        <strong>over 90,000 real estate
+                                            agents</strong>
+                                        with
+                                        <strong>dynamic
+                                            messaging</strong>
+                                        templates. generated
+                                        <strong>thousands of dollars in monthly
+                                            revenue</strong>.
+                                    </li>
+                                    <li>Currently developing an API integrating
+                                        <strong>image and PDF processing with
+                                            AI</strong>
+                                        to
+                                        enhance
+                                        <strong>searchability of Escrow and Title documents.</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class=""
+                            style="display:flex; flex-direction: column; justify-content: start; align-items: start; border-top: 1px solid darkgray;">
+                            <h2 class="resume-h2" style="font-size: 18px; margin-top: 5px;">Web Developer Intern</h2>
+                            <h2 class="resume-h2" style="font-size: 15px;">GoViably</h2>
+                            <div
+                                style="border-top: 2px solid hsl(100, 60%, 60%); display: flex; align-items: center; gap: 5px; font-size: 13px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-calendar-event" viewbox="0 0 16 16">
+                                    <path
+                                        d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1
+                                        2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                </svg>
+                                <p class="resume-p" id="">July 2021
+                                </p>
+                                <p class="resume-p">&nbsp; - &nbsp;</p>
+                                <p class="resume-p" id="">
+                                    March 2022</p>
+                                <!-- <div style="margin-left: 30px; display: flex; align-items: center;"> <img
                                         src='./assets/line/map/map-pin-line.svg' style="width: 16px;" />Remote</div> -->
-                                </div>
-                                <div style="display: flex; margin: 0 0 0 20px; justify-content: center; font-size: 12px;">
-                                    <ul class="resume-ul">
-                                        <li>Started development on an e-commerce app with React and Firebase.
-                                        </li>
-                                        <li>Built ui/ux designs in Figma.</li>
-                                        <li>Built the initial GoViably Site with Wix.</li>
-                                    </ul>
-                                </div>
+                            </div>
+                            <div style="display: flex; margin: 0 0 0 20px; justify-content: center; font-size: 12px;">
+                                <ul class="resume-ul">
+                                    <li>Started development on an e-commerce app with React and Firebase.
+                                    </li>
+                                    <li>Built ui/ux designs in Figma.</li>
+                                    <li>Built the initial GoViably Site with Wix.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="right-side-container">
-                        <div class="right-side-box">
-                            <h3 class="resume-h3">Career Objective</h3>
-                            <div style="padding-top: 2px; border-top: 2px solid black;">A fast emerging software developer ready to join the team at
-                                Bosch. I am eager to apply my experience to create high-quality software products for Bosch.</div>
+                </div>
+                <div class="right-side-container">
+                    <div class="right-side-box">
+                        <h3 class="resume-h3">Career Objective</h3>
+                        <div style="padding-top: 2px; border-top: 2px solid black;">A fast emerging software developer
+                            ready to join the team at
+                            Bosch. I am eager to apply my experience to create high-quality software products for Bosch.
                         </div>
-                        <div class="right-side-box" style="margin-top: 10px;">
-                            <h3 class="resume-h3">Education</h3>
-                            <div style="padding-top: 2px; border-top: 2px solid black; ">
-                                <p class="resume-p" style="font-size: 15px;">Bachelor of Science</p>
-                                <p class="resume-p" style="font-size: 15px;">Biology</p>
-                                <p class="resume-p" style="font-size: 15px;">Southern Utah University</p>
-                                <div style="display: flex; gap: 5px;">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        fill="currentColor"
-                                        class="bi bi-calendar-event"
-                                        viewbox="0 0 16 16">
-                                        <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
-                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1
-                                        2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
-                                    </svg>
-                                    <p class="resume-p" style="font-size: 13px;">2017 - 2021</p>
-                                </div>
-                                <div style="display: flex; gap: 5px; align-items: center;">
-                                    <img src='../assets/line/map/map-pin-line.svg' style="width: 16px;" width="16px" height="16px"/>
-                                    <p class="resume-p" style="font-size: 13px; margin-top: 4px;">Cedar City, Utah</p>
-                                </div>
+                    </div>
+                    <div class="right-side-box" style="margin-top: 10px;">
+                        <h3 class="resume-h3">Education</h3>
+                        <div style="padding-top: 2px; border-top: 2px solid black; ">
+                            <p class="resume-p" style="font-size: 15px;">Bachelor of Science</p>
+                            <p class="resume-p" style="font-size: 15px;">Biology</p>
+                            <p class="resume-p" style="font-size: 15px;">Southern Utah University</p>
+                            <div style="display: flex; gap: 5px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-calendar-event" viewbox="0 0 16 16">
+                                    <path
+                                        d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1
+                                        2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                </svg>
+                                <p class="resume-p" style="font-size: 13px;">2017 - 2021</p>
+                            </div>
+                            <div style="display: flex; gap: 5px; align-items: center;">
+                                <img src='../assets/line/map/map-pin-line.svg' style="width: 16px;" width="16px"
+                                    height="16px" />
+                                <p class="resume-p" style="font-size: 13px; margin-top: 4px;">Cedar City, Utah</p>
                             </div>
                         </div>
-                        <div class="right-side-box" style="margin-top: 10px;">
-                            <h3 class="resume-h3">Skills</h3>
-                            <div style="padding-top: 2px; border-top: 2px solid black; ">
-                                <div
-                                    style="display:flex; gap:10px;">
-                                    <!-- Node.js -->
-                                    <div>
-                                        <svg
-                                            width="48px"
-                                            height="48px"
-                                            viewbox="0 -99 512 512"
-                                            version="1.1"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            preserveaspectratio="xMidYMid">
-                                            <defs>
-                                                <linearGradient x1="68.1884411%" y1="17.4868311%" x2="27.8226935%" y2="89.7551419%" id="linearGradient-1">
-                                                    <stop stop-color="#41873F" offset="0%"></stop>
-                                                    <stop stop-color="#418B3D" offset="32.88%"></stop>
-                                                    <stop stop-color="#419637" offset="63.52%"></stop>
-                                                    <stop stop-color="#3FA92D" offset="93.19%"></stop>
-                                                    <stop stop-color="#3FAE2A" offset="100%"></stop>
-                                                </linearGradient>
-                                                <path
-                                                    id="path-2"
-                                                    d="M57.903386,1.84920993 C56.0541761,0.809029345 53.8582393,0.809029345 52.0090293,1.84920993 L3.351693,29.9340858
+                    </div>
+                    <div class="right-side-box" style="margin-top: 10px;">
+                        <h3 class="resume-h3">Skills</h3>
+                        <div style="padding-top: 2px; border-top: 2px solid black; ">
+                            <div style="display:flex; gap:10px;">
+                                <!-- Node.js -->
+                                <div>
+                                    <svg width="48px" height="48px" viewbox="0 -99 512 512" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        preserveaspectratio="xMidYMid">
+                                        <defs>
+                                            <linearGradient x1="68.1884411%" y1="17.4868311%" x2="27.8226935%"
+                                                y2="89.7551419%" id="linearGradient-1">
+                                                <stop stop-color="#41873F" offset="0%"></stop>
+                                                <stop stop-color="#418B3D" offset="32.88%"></stop>
+                                                <stop stop-color="#419637" offset="63.52%"></stop>
+                                                <stop stop-color="#3FA92D" offset="93.19%"></stop>
+                                                <stop stop-color="#3FAE2A" offset="100%"></stop>
+                                            </linearGradient>
+                                            <path id="path-2" d="M57.903386,1.84920993 C56.0541761,0.809029345 53.8582393,0.809029345 52.0090293,1.84920993 L3.351693,29.9340858
                                                         C1.50248307,30.9742664 0.462302483,32.9390519 0.462302483,35.0194131 L0.462302483,91.3047404 C0.462302483,93.3851016
                                                         1.61805869,95.3498871 3.351693,96.3900677 L52.0090293,124.474944 C53.8582393,125.515124 56.0541761,125.515124
                                                         57.903386,124.474944 L106.560722,96.3900677 C108.409932,95.3498871 109.450113,93.3851016 109.450113,91.3047404
                                                         L109.450113,35.0194131 C109.450113,32.9390519 108.294357,30.9742664 106.560722,29.9340858 L57.903386,1.84920993
                                                         L57.903386,1.84920993 Z"></path>
-                                                <linearGradient x1="43.2765472%" y1="55.168777%" x2="159.245277%" y2="-18.3061379%" id="linearGradient-4">
-                                                    <stop stop-color="#41873F" offset="13.76%"></stop>
-                                                    <stop stop-color="#54A044" offset="40.32%"></stop>
-                                                    <stop stop-color="#66B848" offset="71.36%"></stop>
-                                                    <stop stop-color="#6CC04A" offset="90.81%"></stop>
-                                                </linearGradient>
-                                                <linearGradient x1="-4413.77%" y1="13.43%" x2="5327.93%" y2="13.43%" id="linearGradient-5">
-                                                    <stop stop-color="#6CC04A" offset="9.191646%"></stop>
-                                                    <stop stop-color="#66B848" offset="28.64%"></stop>
-                                                    <stop stop-color="#54A044" offset="59.68%"></stop>
-                                                    <stop stop-color="#41873F" offset="86.24%"></stop>
-                                                </linearGradient>
-                                                <linearGradient x1="-4.38880435%" y1="49.9972065%" x2="101.499239%" y2="49.9972065%" id="linearGradient-6">
-                                                    <stop stop-color="#6CC04A" offset="9.191646%"></stop>
-                                                    <stop stop-color="#66B848" offset="28.64%"></stop>
-                                                    <stop stop-color="#54A044" offset="59.68%"></stop>
-                                                    <stop stop-color="#41873F" offset="86.24%"></stop>
-                                                </linearGradient>
-                                                <linearGradient x1="-9713.77%" y1="36.21%" x2="27.93%" y2="36.21%" id="linearGradient-7">
-                                                    <stop stop-color="#6CC04A" offset="9.191646%"></stop>
-                                                    <stop stop-color="#66B848" offset="28.64%"></stop>
-                                                    <stop stop-color="#54A044" offset="59.68%"></stop>
-                                                    <stop stop-color="#41873F" offset="86.24%"></stop>
-                                                </linearGradient>
-                                                <linearGradient x1="-103.860714%" y1="50.2754209%" x2="100.796849%" y2="50.2754209%" id="linearGradient-8">
-                                                    <stop stop-color="#6CC04A" offset="9.191646%"></stop>
-                                                    <stop stop-color="#66B848" offset="28.64%"></stop>
-                                                    <stop stop-color="#54A044" offset="59.68%"></stop>
-                                                    <stop stop-color="#41873F" offset="86.24%"></stop>
-                                                </linearGradient>
-                                                <linearGradient x1="130.613025%" y1="-211.06936%" x2="4.39327731%" y2="201.605387%" id="linearGradient-9">
-                                                    <stop stop-color="#41873F" offset="0%"></stop>
-                                                    <stop stop-color="#418B3D" offset="32.88%"></stop>
-                                                    <stop stop-color="#419637" offset="63.52%"></stop>
-                                                    <stop stop-color="#3FA92D" offset="93.19%"></stop>
-                                                    <stop stop-color="#3FAE2A" offset="100%"></stop>
-                                                </linearGradient>
-                                            </defs>
-                                            <g fill="none">
-                                                <path
-                                                    d="M253.110609,313.094357 C251.376975,313.094357 249.758916,312.632054 248.256433,311.823025 L232.884876,302.692551
+                                            <linearGradient x1="43.2765472%" y1="55.168777%" x2="159.245277%"
+                                                y2="-18.3061379%" id="linearGradient-4">
+                                                <stop stop-color="#41873F" offset="13.76%"></stop>
+                                                <stop stop-color="#54A044" offset="40.32%"></stop>
+                                                <stop stop-color="#66B848" offset="71.36%"></stop>
+                                                <stop stop-color="#6CC04A" offset="90.81%"></stop>
+                                            </linearGradient>
+                                            <linearGradient x1="-4413.77%" y1="13.43%" x2="5327.93%" y2="13.43%"
+                                                id="linearGradient-5">
+                                                <stop stop-color="#6CC04A" offset="9.191646%"></stop>
+                                                <stop stop-color="#66B848" offset="28.64%"></stop>
+                                                <stop stop-color="#54A044" offset="59.68%"></stop>
+                                                <stop stop-color="#41873F" offset="86.24%"></stop>
+                                            </linearGradient>
+                                            <linearGradient x1="-4.38880435%" y1="49.9972065%" x2="101.499239%"
+                                                y2="49.9972065%" id="linearGradient-6">
+                                                <stop stop-color="#6CC04A" offset="9.191646%"></stop>
+                                                <stop stop-color="#66B848" offset="28.64%"></stop>
+                                                <stop stop-color="#54A044" offset="59.68%"></stop>
+                                                <stop stop-color="#41873F" offset="86.24%"></stop>
+                                            </linearGradient>
+                                            <linearGradient x1="-9713.77%" y1="36.21%" x2="27.93%" y2="36.21%"
+                                                id="linearGradient-7">
+                                                <stop stop-color="#6CC04A" offset="9.191646%"></stop>
+                                                <stop stop-color="#66B848" offset="28.64%"></stop>
+                                                <stop stop-color="#54A044" offset="59.68%"></stop>
+                                                <stop stop-color="#41873F" offset="86.24%"></stop>
+                                            </linearGradient>
+                                            <linearGradient x1="-103.860714%" y1="50.2754209%" x2="100.796849%"
+                                                y2="50.2754209%" id="linearGradient-8">
+                                                <stop stop-color="#6CC04A" offset="9.191646%"></stop>
+                                                <stop stop-color="#66B848" offset="28.64%"></stop>
+                                                <stop stop-color="#54A044" offset="59.68%"></stop>
+                                                <stop stop-color="#41873F" offset="86.24%"></stop>
+                                            </linearGradient>
+                                            <linearGradient x1="130.613025%" y1="-211.06936%" x2="4.39327731%"
+                                                y2="201.605387%" id="linearGradient-9">
+                                                <stop stop-color="#41873F" offset="0%"></stop>
+                                                <stop stop-color="#418B3D" offset="32.88%"></stop>
+                                                <stop stop-color="#419637" offset="63.52%"></stop>
+                                                <stop stop-color="#3FA92D" offset="93.19%"></stop>
+                                                <stop stop-color="#3FAE2A" offset="100%"></stop>
+                                            </linearGradient>
+                                        </defs>
+                                        <g fill="none">
+                                            <path
+                                                d="M253.110609,313.094357 C251.376975,313.094357 249.758916,312.632054 248.256433,311.823025 L232.884876,302.692551
                                                         C230.573363,301.421219 231.72912,300.958916 232.422573,300.727765 C235.543115,299.687585 236.120993,299.456433
                                                         239.357111,297.607223 C239.703837,297.376072 240.16614,297.491648 240.512867,297.722799 L252.30158,304.772912
                                                         C252.763883,305.004063 253.341761,305.004063 253.688488,304.772912 L299.80316,278.074944 C300.265463,277.843792
@@ -515,9 +545,9 @@
                                                         C278.652822,235.42754 275.069977,233.347178 265.592777,233.347178 C254.959819,233.347178 253.688488,237.045598
                                                         253.688488,239.819413 C253.688488,243.171106 255.190971,244.211287 269.522348,246.060497 C283.738149,247.909707
                                                         290.441535,250.567946 290.441535,260.507449 C290.325959,270.678104 282.004515,276.456885 267.326411,276.456885 Z"
-                                                    fill="#539E43"></path>
-                                                <path
-                                                    d="M110.027991,104.711512 C110.027991,102.631151 108.872235,100.666366 107.023025,99.6261851 L58.0189616,71.4257336
+                                                fill="#539E43"></path>
+                                            <path
+                                                d="M110.027991,104.711512 C110.027991,102.631151 108.872235,100.666366 107.023025,99.6261851 L58.0189616,71.4257336
                                                         C57.2099323,70.9634312 56.2853273,70.7322799 55.3607223,70.6167043 L54.8984199,70.6167043 C53.9738149,70.6167043
                                                         53.0492099,70.9634312 52.2401806,71.4257336 L3.23611738,99.6261851 C1.38690745,100.666366 0.231151242,102.631151
                                                         0.231151242,104.711512 L0.346726862,180.52912 C0.346726862,181.5693 0.924604966,182.609481 1.84920993,183.071783
@@ -528,9 +558,8 @@
                                                         73.5060948,123.78149 73.5060948,125.861851 L73.5060948,161.343567 C73.5060948,163.423928 74.661851,165.388713
                                                         76.5110609,166.428894 L105.636117,183.071783 C106.560722,183.649661 107.716479,183.649661 108.641084,183.071783
                                                         C109.565688,182.609481 110.143567,181.5693 110.143567,180.52912 L110.027991,104.711512 L110.027991,104.711512 Z"
-                                                    fill="#333333"></path>
-                                                <path
-                                                    d="M345.571106,0.346726862 C344.646501,-0.115575621 343.490745,-0.115575621 342.681716,0.346726862
+                                                fill="#333333"></path>
+                                            <path d="M345.571106,0.346726862 C344.646501,-0.115575621 343.490745,-0.115575621 342.681716,0.346726862
                                                         C341.757111,0.924604966 341.179233,1.84920993 341.179233,2.88939052 L341.179233,78.013544 C341.179233,78.7069977
                                                         340.832506,79.4004515 340.139052,79.862754 C339.445598,80.2094808 338.752144,80.2094808 338.058691,79.862754
                                                         L325.807675,72.8126411 C323.958465,71.7724605 321.762528,71.7724605 319.913318,72.8126411 L270.909255,101.128668
@@ -544,10 +573,9 @@
                                                         304.888488,123.665914 305.35079,123.434763 L322.109255,113.726411 C322.571558,113.49526 323.149436,113.49526
                                                         323.611738,113.726411 L340.370203,123.434763 C340.832506,123.665914 341.063657,124.243792 341.063657,124.706095
                                                         L341.063657,144.122799 L341.063657,144.122799 Z"
-                                                    fill="#333333"></path>
-                                                <g transform="translate(401.047404, 70.501129)">
-                                                    <path
-                                                        d="M107.600903,53.7426637 C109.450113,52.7024831 110.490293,50.7376975 110.490293,48.6573363 L110.490293,34.9038375
+                                                fill="#333333"></path>
+                                            <g transform="translate(401.047404, 70.501129)">
+                                                <path d="M107.600903,53.7426637 C109.450113,52.7024831 110.490293,50.7376975 110.490293,48.6573363 L110.490293,34.9038375
                                                             C110.490293,32.8234763 109.334537,30.8586907 107.600903,29.8185102 L58.9435666,1.61805869 C57.0943567,0.577878104
                                                             54.8984199,0.577878104 53.0492099,1.61805869 L4.04514673,29.9340858 C2.19593679,30.9742664 1.04018059,32.9390519
                                                             1.04018059,35.0194131 L1.04018059,91.5358916 C1.04018059,93.6162528 2.19593679,95.5810384 4.04514673,96.621219
@@ -558,91 +586,85 @@
                                                             C55.0139955,42.4162528 56.1697517,42.4162528 57.0943567,42.9941309 L72.4659142,51.7778781 C73.3905192,52.3557562
                                                             73.9683973,53.2803612 73.9683973,54.3205418 L73.9683973,68.1896163 C73.9683973,69.2297968 74.5462754,70.2699774
                                                             75.4708804,70.7322799 C76.3954853,71.310158 77.5512415,71.310158 78.4758465,70.7322799 L107.600903,53.7426637
-                                                            L107.600903,53.7426637 Z"
-                                                        fill="#333333"></path>
-                                                    <path
-                                                        d="M55.2451467,51.0844244 C55.5918736,50.8532731 56.0541761,50.8532731 56.4009029,51.0844244 L65.7625282,56.5164786
+                                                            L107.600903,53.7426637 Z" fill="#333333"></path>
+                                                <path d="M55.2451467,51.0844244 C55.5918736,50.8532731 56.0541761,50.8532731 56.4009029,51.0844244 L65.7625282,56.5164786
                                                             C66.1092551,56.7476298 66.3404063,57.0943567 66.3404063,57.5566591 L66.3404063,68.4207675 C66.3404063,68.88307
                                                             66.1092551,69.2297968 65.7625282,69.4609481 L56.4009029,74.8930023 C56.0541761,75.1241535 55.5918736,75.1241535
                                                             55.2451467,74.8930023 L45.8835214,69.4609481 C45.5367946,69.2297968 45.3056433,68.88307 45.3056433,68.4207675
                                                             L45.3056433,57.5566591 C45.3056433,57.0943567 45.5367946,56.7476298 45.8835214,56.5164786 L55.2451467,51.0844244
-                                                            L55.2451467,51.0844244 Z"
-                                                        fill="#539E43"></path>
-                                                </g>
-                                                <g transform="translate(134.067720, 70.501129)">
-                                                    <mask id="mask-3" fill="white">
-                                                        <use xlink:href="#path-2"></use>
-                                                    </mask>
-                                                    <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
-                                                    <g mask="url(#mask-3)">
-                                                        <path d="M51.8934537,1.84920993 L3.12054176,29.9340858 C1.27133183,30.9742664 0,32.9390519 0,35.0194131 L0,91.3047404
+                                                            L55.2451467,51.0844244 Z" fill="#539E43"></path>
+                                            </g>
+                                            <g transform="translate(134.067720, 70.501129)">
+                                                <mask id="mask-3" fill="white">
+                                                    <use xlink:href="#path-2"></use>
+                                                </mask>
+                                                <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                                                <g mask="url(#mask-3)">
+                                                    <path
+                                                        d="M51.8934537,1.84920993 L3.12054176,29.9340858 C1.27133183,30.9742664 0,32.9390519 0,35.0194131 L0,91.3047404
                                                             C0,92.6916479 0.577878104,93.9629797 1.50248307,95.0031603 L56.2853273,1.15575621 C54.8984199,0.924604966
-                                                            53.2803612,1.04018059 51.8934537,1.84920993 L51.8934537,1.84920993 Z"></path>
-                                                        <path d="M56.6320542,125.052822 C57.0943567,124.937246 57.5566591,124.706095 58.0189616,124.474944 L106.791874,96.3900677
+                                                            53.2803612,1.04018059 51.8934537,1.84920993 L51.8934537,1.84920993 Z">
+                                                    </path>
+                                                    <path
+                                                        d="M56.6320542,125.052822 C57.0943567,124.937246 57.5566591,124.706095 58.0189616,124.474944 L106.791874,96.3900677
                                                             C108.641084,95.3498871 109.79684,93.3851016 109.79684,91.3047404 L109.79684,35.0194131 C109.79684,33.51693
-                                                            109.103386,32.014447 108.063205,30.9742664 L56.6320542,125.052822 L56.6320542,125.052822 Z"></path>
-                                                        <path
-                                                            d="M106.676298,29.9340858 L57.7878104,1.84920993 C57.3255079,1.61805869 56.7476298,1.38690745 56.2853273,1.27133183
+                                                            109.103386,32.014447 108.063205,30.9742664 L56.6320542,125.052822 L56.6320542,125.052822 Z">
+                                                    </path>
+                                                    <path
+                                                        d="M106.676298,29.9340858 L57.7878104,1.84920993 C57.3255079,1.61805869 56.7476298,1.38690745 56.2853273,1.27133183
                                                                 L1.50248307,95.1187359 C1.96478555,95.696614 2.54266366,96.1589165 3.12054176,96.5056433 L52.0090293,124.590519
                                                                 C53.3959368,125.399549 55.0139955,125.6307 56.5164786,125.168397 L107.94763,31.089842 C107.600903,30.6275395
                                                                 107.1386,30.2808126 106.676298,29.9340858 L106.676298,29.9340858 Z"
-                                                            fill="url(#linearGradient-4)"></path>
-                                                    </g>
-                                                    <g mask="url(#mask-3)">
-                                                        <g transform="translate(0.000000, -9.246050)">
-                                                            <path
-                                                                d="M109.79684,100.55079 L109.79684,44.2654628 C109.79684,42.1851016 108.525508,40.220316 106.676298,39.1801354
+                                                        fill="url(#linearGradient-4)"></path>
+                                                </g>
+                                                <g mask="url(#mask-3)">
+                                                    <g transform="translate(0.000000, -9.246050)">
+                                                        <path
+                                                            d="M109.79684,100.55079 L109.79684,44.2654628 C109.79684,42.1851016 108.525508,40.220316 106.676298,39.1801354
                                                                     L57.7878104,11.0952596 C57.2099323,10.7485327 56.6320542,10.5173815 55.9386005,10.4018059 L109.450113,101.822122
                                                                     C109.681264,101.475395 109.79684,101.013093 109.79684,100.55079 L109.79684,100.55079 Z"
-                                                                fill="none"></path>
-                                                            <path
-                                                                d="M3.12054176,39.1801354 C1.27133183,40.220316 0,42.1851016 0,44.2654628 L0,100.55079 C0,102.631151
+                                                            fill="none"></path>
+                                                        <path
+                                                            d="M3.12054176,39.1801354 C1.27133183,40.220316 0,42.1851016 0,44.2654628 L0,100.55079 C0,102.631151
                                                                     1.38690745,104.595937 3.12054176,105.636117 L52.0090293,133.720993 C53.1647856,134.414447 54.4361174,134.645598
                                                                     55.8230248,134.414447 L3.46726862,39.0645598 L3.12054176,39.1801354 L3.12054176,39.1801354 Z"
-                                                                fill="none"></path>
-                                                            <path
-                                                                fill="url(#linearGradient-5)"
-                                                                fill-rule="evenodd"
-                                                                d="M50.3909707,0.809029345 L49.6975169,1.15575621 L50.6221219,1.15575621 L50.3909707,0.809029345 Z"></path>
-                                                            <path
-                                                                d="M106.791874,105.636117 C108.178781,104.827088 109.218962,103.440181 109.681264,101.937698 L56.0541761,10.4018059
+                                                            fill="none"></path>
+                                                        <path fill="url(#linearGradient-5)" fill-rule="evenodd"
+                                                            d="M50.3909707,0.809029345 L49.6975169,1.15575621 L50.6221219,1.15575621 L50.3909707,0.809029345 Z">
+                                                        </path>
+                                                        <path
+                                                            d="M106.791874,105.636117 C108.178781,104.827088 109.218962,103.440181 109.681264,101.937698 L56.0541761,10.4018059
                                                                     C54.6672686,10.1706546 53.1647856,10.2862302 51.8934537,11.0952596 L3.351693,39.0645598 L55.7074492,134.530023
                                                                     C56.4009029,134.414447 57.2099323,134.183296 57.903386,133.836569 L106.791874,105.636117 L106.791874,105.636117 Z"
-                                                                fill="url(#linearGradient-6)"
-                                                                fill-rule="evenodd"></path>
-                                                            <path
-                                                                fill="url(#linearGradient-7)"
-                                                                fill-rule="evenodd"
-                                                                d="M111.299323,104.711512 L110.952596,104.133634 L110.952596,104.942664 L111.299323,104.711512 Z"></path>
-                                                            <path
-                                                                d="M106.791874,105.636117 L58.0189616,133.720993 C57.3255079,134.06772 56.6320542,134.298871 55.8230248,134.414447
+                                                            fill="url(#linearGradient-6)" fill-rule="evenodd"></path>
+                                                        <path fill="url(#linearGradient-7)" fill-rule="evenodd"
+                                                            d="M111.299323,104.711512 L110.952596,104.133634 L110.952596,104.942664 L111.299323,104.711512 Z">
+                                                        </path>
+                                                        <path
+                                                            d="M106.791874,105.636117 L58.0189616,133.720993 C57.3255079,134.06772 56.6320542,134.298871 55.8230248,134.414447
                                                                     L56.7476298,136.148081 L110.83702,104.827088 L110.83702,104.133634 L109.450113,101.822122 C109.218962,103.440181
                                                                     108.178781,104.827088 106.791874,105.636117 L106.791874,105.636117 Z"
-                                                                fill="url(#linearGradient-8)"
-                                                                fill-rule="evenodd"></path>
-                                                            <path
-                                                                d="M106.791874,105.636117 L58.0189616,133.720993 C57.3255079,134.06772 56.6320542,134.298871 55.8230248,134.414447
+                                                            fill="url(#linearGradient-8)" fill-rule="evenodd"></path>
+                                                        <path
+                                                            d="M106.791874,105.636117 L58.0189616,133.720993 C57.3255079,134.06772 56.6320542,134.298871 55.8230248,134.414447
                                                                     L56.7476298,136.148081 L110.83702,104.827088 L110.83702,104.133634 L109.450113,101.822122 C109.218962,103.440181
                                                                     108.178781,104.827088 106.791874,105.636117 L106.791874,105.636117 Z"
-                                                                fill="url(#linearGradient-9)"
-                                                                fill-rule="evenodd"></path>
-                                                        </g>
+                                                            fill="url(#linearGradient-9)" fill-rule="evenodd"></path>
                                                     </g>
                                                 </g>
                                             </g>
-                                        </svg>
-                                    </div>
-                                    <!-- REACT -->
-                                    <div>
-                                        <svg width="48px" height="48px" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M18.6789 15.9759C18.6789 14.5415 17.4796 13.3785 16 13.3785C14.5206 13.3785 13.3211 14.5415 13.3211 15.9759C13.3211
+                                        </g>
+                                    </svg>
+                                </div>
+                                <!-- REACT -->
+                                <div>
+                                    <svg width="48px" height="48px" viewbox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M18.6789 15.9759C18.6789 14.5415 17.4796 13.3785 16 13.3785C14.5206 13.3785 13.3211 14.5415 13.3211 15.9759C13.3211
                                                     17.4105 14.5206 18.5734 16 18.5734C17.4796 18.5734 18.6789 17.4105 18.6789 15.9759Z"
-                                                fill="#53C1DE"/>
-                                            <path
-                                                fill-rule="evenodd"
-                                                clip-rule="evenodd"
-                                                d="M24.7004 11.1537C25.2661 8.92478 25.9772 4.79148 23.4704 3.39016C20.9753 1.99495 17.7284 4.66843 16.0139
+                                            fill="#53C1DE" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.7004 11.1537C25.2661 8.92478 25.9772 4.79148 23.4704 3.39016C20.9753 1.99495 17.7284 4.66843 16.0139
                                                     6.27318C14.3044 4.68442 10.9663 2.02237 8.46163 3.42814C5.96751 4.82803 6.73664 8.8928 7.3149 11.1357C4.98831 11.7764 1
                                                     13.1564 1 15.9759C1 18.7874 4.98416 20.2888 7.29698 20.9289C6.71658 23.1842 5.98596 27.1909 8.48327 28.5877C10.9973
                                                     29.9932 14.325 27.3945 16.0554 25.7722C17.7809 27.3864 20.9966 30.0021 23.4922 28.6014C25.9956 27.1963 25.3436 23.1184
@@ -668,76 +690,65 @@
                                                     12.2404 12.8764 13.2684 11.4158C15.0875 11.2825 16.9178 11.2821 18.7369 11.4166C19.7561 12.8771 20.6675 14.4086 21.4757
                                                     15.9881C20.6771 17.5812 19.7595 19.1198 18.7473 20.5941ZM22.8303 4.4666C24.7006 5.51254 23.8681 9.22726 23.4595
                                                     10.8426C22.2149 10.5641 20.8633 10.3569 19.4483 10.2281C18.6239 9.09004 17.7698 8.05518 16.9124 7.15949C18.1695 5.98441
-                                                    20.9781 3.43089 22.8303 4.4666Z"
-                                                fill="#53C1DE"/>
-                                        </svg>
-                                    </div>
+                                                    20.9781 3.43089 22.8303 4.4666Z" fill="#53C1DE" />
+                                    </svg>
                                 </div>
-                                <div
-                                    style="display:flex; gap:10px;">
-                                    <!-- Javascript -->
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" width="48px" height="48px">
-                                            <path fill="#ffd600" d="M6,42V6h36v36H6z"/>
-                                            <path
-                                                fill="#000001"
-                                                d="M29.538 32.947c.692 1.124 1.444 2.201 3.037 2.201 1.338 0 2.04-.665 2.04-1.585
+                            </div>
+                            <div style="display:flex; gap:10px;">
+                                <!-- Javascript -->
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" width="48px"
+                                        height="48px">
+                                        <path fill="#ffd600" d="M6,42V6h36v36H6z" />
+                                        <path fill="#000001"
+                                            d="M29.538 32.947c.692 1.124 1.444 2.201 3.037 2.201 1.338 0 2.04-.665 2.04-1.585
                                                     0-1.101-.726-1.492-2.198-2.133l-.807-.344c-2.329-.988-3.878-2.226-3.878-4.841 0-2.41 1.845-4.244 4.728-4.244 2.053 0
                                                     3.528.711 4.592 2.573l-2.514 1.607c-.553-.988-1.151-1.377-2.078-1.377-.946 0-1.545.597-1.545 1.377 0 .964.6 1.354 1.985
                                                     1.951l.807.344C36.452 29.645 38 30.839 38 33.523 38 36.415 35.716 38 32.65 38c-2.999 0-4.702-1.505-5.65-3.368L29.538
                                                     32.947zM17.952 33.029c.506.906 1.275 1.603 2.381 1.603 1.058 0 1.667-.418 1.667-2.043V22h3.333v11.101c0 3.367-1.953
-                                                    4.899-4.805 4.899-2.577 0-4.437-1.746-5.195-3.368L17.952 33.029z"/>
-                                        </svg>
-                                    </div>
-                                    <!-- CSS -->
-                                    <div>
-                                        <svg width="48px" height="48px" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#1172B8"/>
-                                            <path d="M26 5H16V29.5L24 27L26 5Z" fill="#33AADD"/>
-                                            <path
-                                                d="M19.5 17.5H9.5L9 14L17 11.5H9L8.5 8.5H24L23.5 12L17 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5
-                                                    17.5Z"
-                                                fill="white"/>
-                                        </svg>
-                                    </div>
-                                    <!-- HTML -->
-                                    <div>
-                                        <svg width="48px" height="48px" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#E44D26"/>
-                                            <path d="M26 5H16V29.5L24 27L26 5Z" fill="#F16529"/>
-                                            <path
-                                                d="M9.5 17.5L8.5 8H24L23.5 11H11.5L12 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5H9.5Z"
-                                                fill="white"/>
-                                        </svg>
-                                    </div>
+                                                    4.899-4.805 4.899-2.577 0-4.437-1.746-5.195-3.368L17.952 33.029z" />
+                                    </svg>
                                 </div>
-                                <div
-                                    style="display:flex; gap: 10px;">
-                                    <!-- postgresql -->
-                                    <div>
-                                        <svg
-                                            width="48px"
-                                            height="48px"
-                                            viewbox="0 0 73 73"
-                                            version="1.1"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <title>databases-and-servers/databases/postgresql</title>
-                                            <desc>Created with Sketch.</desc>
-                                            <defs></defs>
-                                            <g id="databases-and-servers/databases/postgresql" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <g
-                                                    id="container"
-                                                    transform="translate(2.000000, 2.000000)"
-                                                    fill="#FFFFFF"
-                                                    fill-rule="nonzero"
-                                                    stroke="#091E2E"
-                                                    stroke-width="2">
-                                                    <rect id="mask" x="-1" y="-1" width="71" height="71" rx="14"></rect>
-                                                </g>
-                                                <g id="postgresql-original" transform="translate(10.000000, 13.000000)" fill-rule="nonzero">
-                                                    <path
-                                                        d="M37.1548522,37.2802062 C37.4796143,34.5774409 37.3823925,34.1806933 39.3955038,34.6188119 L39.9064353,34.6634925
+                                <!-- CSS -->
+                                <div>
+                                    <svg width="48px" height="48px" viewbox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#1172B8" />
+                                        <path d="M26 5H16V29.5L24 27L26 5Z" fill="#33AADD" />
+                                        <path d="M19.5 17.5H9.5L9 14L17 11.5H9L8.5 8.5H24L23.5 12L17 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5
+                                                    17.5Z" fill="white" />
+                                    </svg>
+                                </div>
+                                <!-- HTML -->
+                                <div>
+                                    <svg width="48px" height="48px" viewbox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#E44D26" />
+                                        <path d="M26 5H16V29.5L24 27L26 5Z" fill="#F16529" />
+                                        <path
+                                            d="M9.5 17.5L8.5 8H24L23.5 11H11.5L12 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5H9.5Z"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap: 10px;">
+                                <!-- postgresql -->
+                                <div>
+                                    <svg width="48px" height="48px" viewbox="0 0 73 73" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <title>databases-and-servers/databases/postgresql</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <defs></defs>
+                                        <g id="databases-and-servers/databases/postgresql" stroke="none"
+                                            stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="container" transform="translate(2.000000, 2.000000)" fill="#FFFFFF"
+                                                fill-rule="nonzero" stroke="#091E2E" stroke-width="2">
+                                                <rect id="mask" x="-1" y="-1" width="71" height="71" rx="14"></rect>
+                                            </g>
+                                            <g id="postgresql-original" transform="translate(10.000000, 13.000000)"
+                                                fill-rule="nonzero">
+                                                <path
+                                                    d="M37.1548522,37.2802062 C37.4796143,34.5774409 37.3823925,34.1806933 39.3955038,34.6188119 L39.9064353,34.6634925
                                                             C41.4545369,34.7338232 43.4796457,34.4144393 44.6694747,33.8617232 C47.2307513,32.6731353 48.7490658,30.6893974
                                                             46.2241957,31.2102579 C40.4637022,32.3988458 40.067782,30.4482047 40.067782,30.4482047 C46.1505554,21.4231281
                                                             48.693215,9.96626607 46.4980715,7.16172818 C40.5116925,-0.487349997 30.1495063,3.12971369 29.9761619,3.22321208
@@ -750,10 +761,8 @@
                                                             22.3287386,37.3046151 24.6148982,34.1049845 L24.5238821,34.4698764 C25.1336902,34.9580538 25.0927329,37.9768933
                                                             25.1787845,40.1335619 C25.2652499,42.2906441 25.4096345,44.3033417 25.8494079,45.4902747 C26.2891813,46.6767941
                                                             26.8079732,49.7332812 30.8929426,48.8578715 C34.3068748,48.1280876 36.9169691,47.0751965 37.1548522,37.2802062"
-                                                        id="Shape"
-                                                        fill="#000000"></path>
-                                                    <path
-                                                        d="M29.562866,50.9921997 C27.7561958,50.9921997 26.5796055,50.2934441 25.8651289,49.6186836 C24.7865878,48.6009578
+                                                    id="Shape" fill="#000000"></path>
+                                                <path d="M29.562866,50.9921997 C27.7561958,50.9921997 26.5796055,50.2934441 25.8651289,49.6186836 C24.7865878,48.6009578
                                                             24.358812,47.2899118 24.1031394,46.5067594 L23.9926789,46.1799288 C23.4780241,44.7906917 23.3034386,42.7904054
                                                             23.2000112,40.214649 C23.1842902,39.8278304 23.1735337,39.429428 23.1615362,39.0070304 C23.1528483,38.6979893
                                                             23.1420918,38.3103433 23.1263708,37.9049078 C22.4838797,38.2118804 21.7971216,38.4303191 21.0735434,38.5536046
@@ -788,11 +797,9 @@
                                                             16.5475596,28.3949635 L17.6935354,27.1889998 L19.0790491,28.1095039 C19.6375571,28.4806014 20.2535708,28.6911797
                                                             20.8861329,28.7308958 L24.1904321,25.9127055 L23.71177,30.7977893 C23.7010136,30.9074224 23.6956353,31.0567716
                                                             23.7386612,31.3339571 L23.8826321,32.2598393 L23.2579305,32.9581813 L23.185945,33.0392684 L25.0013031,33.8770304
-                                                            L25.760874,32.9250845 Z"
-                                                        id="Shape"
-                                                        fill="#000000"></path>
-                                                    <path
-                                                        d="M46.2241957,31.2102579 C40.4632885,32.3988458 40.0673683,30.4482047 40.0673683,30.4482047 C46.1501417,21.4227144
+                                                            L25.760874,32.9250845 Z" id="Shape" fill="#000000"></path>
+                                                <path
+                                                    d="M46.2241957,31.2102579 C40.4632885,32.3988458 40.0673683,30.4482047 40.0673683,30.4482047 C46.1501417,21.4227144
                                                             48.6928013,9.96543865 46.4984852,7.16172818 C40.5121062,-0.486936287 30.1490926,3.1301274 29.9761619,3.2240395
                                                             L29.9203111,3.23396853 C28.7821958,2.99774031 27.5083837,2.85707902 26.0765345,2.83391127 C23.4697499,2.79129918
                                                             21.4926313,3.51735966 19.9921063,4.65506126 C19.9921063,4.65506126 1.50590322,-2.96050643 2.36559192,14.2328539
@@ -806,10 +813,9 @@
                                                             C36.4958127,40.8211473 36.8909054,41.1537699 36.9161417,39.1435546 L37.233457,38.1920224 C37.5991764,35.1442232
                                                             37.2913764,34.161249 39.3950901,34.6183982 L39.9060215,34.6630788 C41.4541231,34.7334095 43.4800594,34.4140256
                                                             44.6694747,33.8613095 C47.2303376,32.673549 48.7490658,30.6893974 46.2241957,31.2102579 Z"
-                                                        id="Shape"
-                                                        fill="#336791"></path>
-                                                    <path
-                                                        d="M29.7693071,49.7721699 C26.363649,49.7721699 25.2846942,47.0751965 24.843266,45.9722465 C24.1970515,44.3558828
+                                                    id="Shape" fill="#336791"></path>
+                                                <path
+                                                    d="M29.7693071,49.7721699 C26.363649,49.7721699 25.2846942,47.0751965 24.843266,45.9722465 C24.1970515,44.3558828
                                                             24.0576313,38.0832167 24.2016023,32.9391506 C24.2115313,32.5746724 24.5135394,32.2867305 24.8800861,32.2979006
                                                             C25.2445644,32.3078296 25.5316789,32.6114926 25.5213361,32.9759708 C25.3554386,38.9089812 25.5908394,44.2855522
                                                             26.0690878,45.4820005 C26.81542,47.3474175 27.9473297,48.9790884 31.147374,48.2935715 C34.1852442,47.6419788
@@ -913,37 +919,36 @@
                                                             40.8790667,16.2492749 40.7433699,17.1300628 C40.6387014,17.8097878 40.5303094,18.5126805 40.5042457,19.3338942
                                                             C40.4790094,20.1091862 40.5778861,20.9324684 40.6825546,21.803741 C40.9473288,24.0055039 41.2472683,26.5010007
                                                             39.5692619,29.0068402 C39.4418393,29.1967329 39.2329159,29.2997466 39.0198554,29.2997466 Z"
-                                                        id="Shape"
-                                                        fill="#FFFFFF"></path>
-                                                </g>
+                                                    id="Shape" fill="#FFFFFF"></path>
                                             </g>
-                                        </svg>
-                                    </div>
-                                    <!-- oracle plsql -->
-                                    <div>
-                                        <svg fill="#000000" width="48px" height="48px" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                            <title>file_type_plsql</title>
-                                            <path
-                                                d="M8.562,15.256A21.159,21.159,0,0,0,16,16.449a21.159,21.159,0,0,0,7.438-1.194c1.864-.727,2.525-1.535,2.525-2V9.7a10.357,10.357,0,0,1-2.084,1.076A22.293,22.293,0,0,1,16,12.078a22.36,22.36,0,0,1-7.879-1.3A10.28,10.28,0,0,1,6.037,9.7v3.55C6.037,13.724,6.7,14.528,8.562,15.256Z"
-                                                style="fill:red"/>
-                                            <path
-                                                d="M8.562,21.961a15.611,15.611,0,0,0,2.6.741A24.9,24.9,0,0,0,16,23.155a24.9,24.9,0,0,0,4.838-.452,15.614,15.614,0,0,0,2.6-.741c1.864-.727,2.525-1.535,2.525-2v-3.39a10.706,10.706,0,0,1-1.692.825A23.49,23.49,0,0,1,16,18.74a23.49,23.49,0,0,1-8.271-1.348,10.829,10.829,0,0,1-1.692-.825V19.96C6.037,20.426,6.7,21.231,8.562,21.961Z"
-                                                style="fill:red"/>
-                                            <path
-                                                d="M16,30c5.5,0,9.963-1.744,9.963-3.894V23.269a10.5,10.5,0,0,1-1.535.762l-.157.063A23.487,23.487,0,0,1,16,25.445a23.422,23.422,0,0,1-8.271-1.351c-.054-.02-.106-.043-.157-.063a10.5,10.5,0,0,1-1.535-.762v2.837C6.037,28.256,10.5,30,16,30Z"
-                                                style="fill:red"/>
-                                            <ellipse cx="16" cy="5.894" rx="9.963" ry="3.894" style="fill:red"/>
-                                        </svg>
-                                    </div>
+                                        </g>
+                                    </svg>
                                 </div>
-                                <div
-                                    style="display: flex; gap: 10px;">
-                                    <!-- aws -->
-                                    <div>
-                                        <svg width="48px" height="48px" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
-                                            <path
-                                                fill="#252F3E"
-                                                d="M4.51 7.687c0 .197.02.357.058.475.042.117.096.245.17.384a.233.233 0 01.037.123c0
+                                <!-- oracle plsql -->
+                                <div>
+                                    <svg fill="#000000" width="48px" height="48px" viewbox="0 0 32 32"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title>file_type_plsql</title>
+                                        <path
+                                            d="M8.562,15.256A21.159,21.159,0,0,0,16,16.449a21.159,21.159,0,0,0,7.438-1.194c1.864-.727,2.525-1.535,2.525-2V9.7a10.357,10.357,0,0,1-2.084,1.076A22.293,22.293,0,0,1,16,12.078a22.36,22.36,0,0,1-7.879-1.3A10.28,10.28,0,0,1,6.037,9.7v3.55C6.037,13.724,6.7,14.528,8.562,15.256Z"
+                                            style="fill:red" />
+                                        <path
+                                            d="M8.562,21.961a15.611,15.611,0,0,0,2.6.741A24.9,24.9,0,0,0,16,23.155a24.9,24.9,0,0,0,4.838-.452,15.614,15.614,0,0,0,2.6-.741c1.864-.727,2.525-1.535,2.525-2v-3.39a10.706,10.706,0,0,1-1.692.825A23.49,23.49,0,0,1,16,18.74a23.49,23.49,0,0,1-8.271-1.348,10.829,10.829,0,0,1-1.692-.825V19.96C6.037,20.426,6.7,21.231,8.562,21.961Z"
+                                            style="fill:red" />
+                                        <path
+                                            d="M16,30c5.5,0,9.963-1.744,9.963-3.894V23.269a10.5,10.5,0,0,1-1.535.762l-.157.063A23.487,23.487,0,0,1,16,25.445a23.422,23.422,0,0,1-8.271-1.351c-.054-.02-.106-.043-.157-.063a10.5,10.5,0,0,1-1.535-.762v2.837C6.037,28.256,10.5,30,16,30Z"
+                                            style="fill:red" />
+                                        <ellipse cx="16" cy="5.894" rx="9.963" ry="3.894" style="fill:red" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <!-- aws -->
+                                <div>
+                                    <svg width="48px" height="48px" viewbox="0 0 16 16"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none">
+                                        <path fill="#252F3E"
+                                            d="M4.51 7.687c0 .197.02.357.058.475.042.117.096.245.17.384a.233.233 0 01.037.123c0
                                                     .053-.032.107-.1.16l-.336.224a.255.255 0 01-.138.048c-.054 0-.107-.026-.16-.074a1.652 1.652 0 01-.192-.251 4.137 4.137 0
                                                     01-.165-.315c-.415.491-.936.737-1.564.737-.447 0-.804-.129-1.064-.385-.261-.256-.394-.598-.394-1.025
                                                     0-.454.16-.822.484-1.1.325-.278.756-.416 1.304-.416.18 0
@@ -969,63 +974,50 @@
                                                     01.047.176v.251c0 .112-.042.171-.122.171a.552.552 0 01-.202-.064 2.427 2.427 0 00-1.022-.208c-.303
                                                     0-.543.048-.708.15-.165.1-.25.256-.25.475 0
                                                     .149.053.277.16.379.106.101.303.202.585.293l.756.24c.383.123.66.294.825.513.165.219.244.47.244.748 0
-                                                    .23-.047.437-.138.619a1.436 1.436 0 01-.388.47c-.165.133-.362.23-.591.299-.24.075-.49.112-.761.112z"/>
-                                            <g fill="#F90" fill-rule="evenodd" clip-rule="evenodd">
-                                                <path d="M14.465 11.813c-1.75 1.297-4.294 1.986-6.481 1.986-3.065 0-5.827-1.137-7.913-3.027-.165-.15-.016-.353.18-.235 2.257
-                                                    1.313 5.04 2.109 7.92 2.109 1.941 0 4.075-.406 6.039-1.239.293-.133.543.192.255.406z"/>
-                                                <path d="M15.194 10.98c-.223-.287-1.479-.138-2.048-.069-.17.022-.197-.128-.043-.24 1-.705 2.645-.502 2.836-.267.192.24-.053
-                                                1.89-.99 2.68-.143.123-.281.06-.218-.1.213-.53.687-1.72.463-2.003z"/>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <!-- gcp -->
-                                    <div>
-                                        <svg
-                                            width="48px"
-                                            height="48px"
-                                            viewbox="0 -25 256 256"
-                                            version="1.1"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            preserveaspectratio="xMidYMid">
-                                            <g>
-                                                <path
-                                                    d="M170.2517,56.8186 L192.5047,34.5656 L193.9877,25.1956 C153.4367,-11.6774 88.9757,-7.4964 52.4207,33.9196
+                                                    .23-.047.437-.138.619a1.436 1.436 0 01-.388.47c-.165.133-.362.23-.591.299-.24.075-.49.112-.761.112z" />
+                                        <g fill="#F90" fill-rule="evenodd" clip-rule="evenodd">
+                                            <path
+                                                d="M14.465 11.813c-1.75 1.297-4.294 1.986-6.481 1.986-3.065 0-5.827-1.137-7.913-3.027-.165-.15-.016-.353.18-.235 2.257
+                                                    1.313 5.04 2.109 7.92 2.109 1.941 0 4.075-.406 6.039-1.239.293-.133.543.192.255.406z" />
+                                            <path d="M15.194 10.98c-.223-.287-1.479-.138-2.048-.069-.17.022-.197-.128-.043-.24 1-.705 2.645-.502 2.836-.267.192.24-.053
+                                                1.89-.99 2.68-.143.123-.281.06-.218-.1.213-.53.687-1.72.463-2.003z" />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <!-- gcp -->
+                                <div>
+                                    <svg width="48px" height="48px" viewbox="0 -25 256 256" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        preserveaspectratio="xMidYMid">
+                                        <g>
+                                            <path d="M170.2517,56.8186 L192.5047,34.5656 L193.9877,25.1956 C153.4367,-11.6774 88.9757,-7.4964 52.4207,33.9196
                                                         C42.2667,45.4226 34.7337,59.7636 30.7167,74.5726 L38.6867,73.4496 L83.1917,66.1106 L86.6277,62.5966 C106.4247,40.8546
                                                         139.8977,37.9296 162.7557,56.4286 L170.2517,56.8186 Z"
-                                                    fill="#EA4335"></path>
-                                                <path
-                                                    d="M224.2048,73.9182 C219.0898,55.0822 208.5888,38.1492 193.9878,25.1962 L162.7558,56.4282 C175.9438,67.2042
+                                                fill="#EA4335"></path>
+                                            <path d="M224.2048,73.9182 C219.0898,55.0822 208.5888,38.1492 193.9878,25.1962 L162.7558,56.4282 C175.9438,67.2042
                                                         183.4568,83.4382 183.1348,100.4652 L183.1348,106.0092 C198.4858,106.0092 210.9318,118.4542 210.9318,133.8052
                                                         C210.9318,149.1572 198.4858,161.2902 183.1348,161.2902 L127.4638,161.2902 L121.9978,167.2242 L121.9978,200.5642
                                                         L127.4638,205.7952 L183.1348,205.7952 C223.0648,206.1062 255.6868,174.3012 255.9978,134.3712 C256.1858,110.1682
-                                                        244.2528,87.4782 224.2048,73.9182"
-                                                    fill="#4285F4"></path>
-                                                <path
-                                                    d="M71.8704,205.7957 L127.4634,205.7957 L127.4634,161.2897 L71.8704,161.2897 C67.9094,161.2887 64.0734,160.4377
+                                                        244.2528,87.4782 224.2048,73.9182" fill="#4285F4"></path>
+                                            <path d="M71.8704,205.7957 L127.4634,205.7957 L127.4634,161.2897 L71.8704,161.2897 C67.9094,161.2887 64.0734,160.4377
                                                         60.4714,158.7917 L52.5844,161.2117 L30.1754,183.4647 L28.2234,191.0387 C40.7904,200.5277 56.1234,205.8637
-                                                        71.8704,205.7957"
-                                                    fill="#34A853"></path>
-                                                <path
-                                                    d="M71.8704,61.4255 C31.9394,61.6635 -0.2366,94.2275 0.0014,134.1575 C0.1344,156.4555 10.5484,177.4455 28.2234,191.0385
+                                                        71.8704,205.7957" fill="#34A853"></path>
+                                            <path
+                                                d="M71.8704,61.4255 C31.9394,61.6635 -0.2366,94.2275 0.0014,134.1575 C0.1344,156.4555 10.5484,177.4455 28.2234,191.0385
                                                         L60.4714,158.7915 C46.4804,152.4705 40.2634,136.0055 46.5844,122.0155 C52.9044,108.0255 69.3704,101.8085 83.3594,108.1285
                                                         C89.5244,110.9135 94.4614,115.8515 97.2464,122.0155 L129.4944,89.7685 C115.7734,71.8315 94.4534,61.3445 71.8704,61.4255"
-                                                    fill="#FBBC05"></path>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <!-- heroku -->
-                                    <div>
-                                        <svg
-                                            width="48px"
-                                            height="48px"
-                                            viewbox="0 -184 512 512"
-                                            version="1.1"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            preserveaspectratio="xMidYMid">
-                                            <g fill="#430098">
-                                                <path d="M116.494382,0 C123.538655,0 129.26992,5.62742772 129.434564,12.633833 L129.438202,12.9438202 L129.438202,130.876404
+                                                fill="#FBBC05"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <!-- heroku -->
+                                <div>
+                                    <svg width="48px" height="48px" viewbox="0 -184 512 512" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        preserveaspectratio="xMidYMid">
+                                        <g fill="#430098">
+                                            <path
+                                                d="M116.494382,0 C123.538655,0 129.26992,5.62742772 129.434564,12.633833 L129.438202,12.9438202 L129.438202,130.876404
                                                     C129.438202,137.920677 123.809029,143.651942 116.804293,143.816586 L116.494382,143.820225 L12.9438202,143.820225
                                                     C5.8995473,143.820225 0.168282652,138.191051 0.00363861767,131.186316 L0,130.876404 L0,12.9438202 C0,5.89777561
                                                     5.62917374,0.168231299 12.6339089,0.00363750129 L12.9438202,0 L116.494382,0 Z M116.494382,7.19101124
@@ -1040,8 +1032,9 @@
                                                     73.7078652,71.9101124 C59.231173,71.9101124 43.0101231,79.1183624 42.5284133,79.3340461 L42.5186517,79.338427
                                                     L32.3595506,83.9406742 L32.3595506,21.5730337 L46.741573,21.5730337 Z M97.0786517,21.5730337 C96.1078652,29.7420225
                                                     92.7964045,37.5730337 86.2921348,44.9438202 L86.2921348,44.9438202 L71.9101124,44.9438202 C77.5622472,37.5280899
-                                                    81.1110112,29.7240449 82.6966292,21.5730337 L82.6966292,21.5730337 Z"></path>
-                                                <path d="M365.094831,45.8211236 C377.855281,45.8211236 391.117303,53.9253933 391.117303,73.3483146 C391.117303,92.7748315
+                                                    81.1110112,29.7240449 82.6966292,21.5730337 L82.6966292,21.5730337 Z">
+                                            </path>
+                                            <path d="M365.094831,45.8211236 C377.855281,45.8211236 391.117303,53.9253933 391.117303,73.3483146 C391.117303,92.7748315
                                                     377.855281,100.875506 365.094831,100.875506 C352.262472,100.875506 339.002247,92.7748315 339.002247,73.3483146
                                                     C339.002247,53.9253933 352.262472,45.8211236 365.094831,45.8211236 Z M481.819326,46.8260674 L481.819326,78.5132584
                                                     C481.819326,85.8211236 484.185169,89.12 489.921798,89.12 C495.654831,89.12 497.948764,85.8211236 497.948764,78.5132584
@@ -1063,25 +1056,19 @@
                                                     372.550112,57.6503371 365.094831,57.6503371 Z M301.605393,58.4377528 L295.440899,58.4377528 L295.440899,70.552809
                                                     L301.605393,70.552809 C307.484045,70.552809 310.06382,68.9042697 310.06382,64.4602247 C310.06382,60.0179775
                                                     307.484045,58.4377528 301.605393,58.4377528 Z"></path>
-                                            </g>
-                                        </svg>
-                                    </div>
+                                        </g>
+                                    </svg>
                                 </div>
-                                <div
-                                    style="display: flex; gap: 10px;">
-                                    <!-- twilio -->
-                                    <div>
-                                        <svg
-                                            width="48px"
-                                            height="48px"
-                                            viewbox="0 -178.5 512 512"
-                                            version="1.1"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            preserveaspectratio="xMidYMid">
-                                            <g>
-                                                <path
-                                                    d="M77.0156438,0 C119.528279,0 154.031288,34.5030084 154.031288,77.0156438 C154.031288,119.528279 119.528279,154.031288
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <!-- twilio -->
+                                <div>
+                                    <svg width="48px" height="48px" viewbox="0 -178.5 512 512" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        preserveaspectratio="xMidYMid">
+                                        <g>
+                                            <path
+                                                d="M77.0156438,0 C119.528279,0 154.031288,34.5030084 154.031288,77.0156438 C154.031288,119.528279 119.528279,154.031288
                                                         77.0156438,154.031288 C34.5030084,154.031288 0,119.528279 0,77.0156438 C0,34.5030084 34.5030084,0 77.0156438,0 Z
                                                         M77.0156438,20.33213 C45.5932611,20.33213 20.33213,45.5932611 20.33213,77.0156438 C20.33213,108.438026
                                                         45.5932611,133.699158 77.0156438,133.699158 C108.438026,133.699158 133.699158,108.438026 133.699158,77.0156438
@@ -1141,23 +1128,17 @@
                                                         430.363418,48.3658243 429.747292,48.3658243 L429.747292,48.3658243 L402.637786,48.3658243 C402.021661,48.3658243
                                                         401.405535,47.7496992 401.405535,47.133574 L401.405535,47.133574 L401.405535,31.4223827 C401.405535,30.8062575
                                                         402.021661,30.1901324 402.637786,30.1901324 L402.637786,30.1901324 Z"
-                                                    fill="#F12E45"></path>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <!-- sendgrid -->
-                                    <div>
-                                        <svg
-                                            width="48px"
-                                            height="48px"
-                                            viewbox="0 -211 512 512"
-                                            version="1.1"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            preserveaspectratio="xMidYMid">
-                                            <g>
-                                                <path
-                                                    d="M177.11377,57.2944944 C179.242871,52.5282692 183.704839,49.283328 189.587603,49.283328 C195.470367,49.283328
+                                                fill="#F12E45"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <!-- sendgrid -->
+                                <div>
+                                    <svg width="48px" height="48px" viewbox="0 -211 512 512" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        preserveaspectratio="xMidYMid">
+                                        <g>
+                                            <path d="M177.11377,57.2944944 C179.242871,52.5282692 183.704839,49.283328 189.587603,49.283328 C195.470367,49.283328
                                                         199.831149,52.0209419 201.656691,57.2944944 L177.11377,57.2944944 Z M215.651807,63.3796314 C215.651807,48.7753029
                                                         205.00212,37.1130543 189.486417,37.1130543 C174.882088,37.1130543 163.117956,48.8764892 163.117956,63.4815156
                                                         C163.117956,78.0851463 174.0719,89.8492791 189.892558,89.8492791 C200.849294,89.8492791 208.729965,84.5638629
@@ -1202,180 +1183,184 @@
                                                         133.853472,26.3628784 C127.261705,26.3628784 123.713205,29.9127742 123.713205,34.5778134 C123.713205,40.2568091
                                                         130.811601,42.1849324 138.721581,44.8206617 C148.762755,48.0656029 160.120747,52.5282692 160.120747,66.7271546
                                                         C160.120747,78.4905895 150.789971,89.8492791 134.461985,89.8492791 C121.07608,89.8492791 112.151445,84.1709809
-                                                        105.457097,76.5638619 L105.457097,76.5638619 Z"
-                                                    fill="#212F38"></path>
-                                                <g>
-                                                    <path
-                                                        d="M88.83602,0 L88.83602,59.2240133 L59.2240132,59.2240133 L59.2240132,88.8346241 L0.000697836735,88.8346241
+                                                        105.457097,76.5638619 L105.457097,76.5638619 Z" fill="#212F38">
+                                            </path>
+                                            <g>
+                                                <path
+                                                    d="M88.83602,0 L88.83602,59.2240133 L59.2240132,59.2240133 L59.2240132,88.8346241 L0.000697836735,88.8346241
                                                             L0,29.6113087 L29.6120066,29.6113087 L29.6120066,0 L88.83602,0 Z"
-                                                        fill="#9DD6E3"></path>
-                                                    <polygon
-                                                        fill="#3F72AB"
-                                                        points="0.000697836735 88.8346241 29.6127045 88.8346241 29.6127045 59.2226177 0.000697836735 59.2226177"></polygon>
-                                                    <polygon fill="#00A9D1" points="59.2240132 59.2240133 88.83602 59.2240133 88.83602 29.6113087 59.2240132 29.6113087"></polygon>
-                                                    <polygon fill="#00A9D1" points="29.6120066 29.6120065 59.2240132 29.6120065 59.2240132 0 29.6120066 0"></polygon>
-                                                    <polygon
-                                                        fill="#2191C4"
-                                                        points="29.6120066 59.2233155 59.2240132 59.2233155 59.2240132 29.6113087 29.6120066 29.6113087"></polygon>
-                                                    <polygon fill="#3F72AB" points="59.2240132 29.6120065 88.83602 29.6120065 88.83602 0 59.2240132 0"></polygon>
-                                                </g>
+                                                    fill="#9DD6E3"></path>
+                                                <polygon fill="#3F72AB"
+                                                    points="0.000697836735 88.8346241 29.6127045 88.8346241 29.6127045 59.2226177 0.000697836735 59.2226177">
+                                                </polygon>
+                                                <polygon fill="#00A9D1"
+                                                    points="59.2240132 59.2240133 88.83602 59.2240133 88.83602 29.6113087 59.2240132 29.6113087">
+                                                </polygon>
+                                                <polygon fill="#00A9D1"
+                                                    points="29.6120066 29.6120065 59.2240132 29.6120065 59.2240132 0 29.6120066 0">
+                                                </polygon>
+                                                <polygon fill="#2191C4"
+                                                    points="29.6120066 59.2233155 59.2240132 59.2233155 59.2240132 29.6113087 29.6120066 29.6113087">
+                                                </polygon>
+                                                <polygon fill="#3F72AB"
+                                                    points="59.2240132 29.6120065 88.83602 29.6120065 88.83602 0 59.2240132 0">
+                                                </polygon>
                                             </g>
-                                        </svg>
-                                    </div>
+                                        </g>
+                                    </svg>
                                 </div>
-                                <div style="display: flex; gap: 0px 10px; flex-wrap: wrap; max-width: 600px;">
-                                    <p class="resume-p" style="font-size: 13px;">Node.js</p>
-                                    <p class="resume-p" style="font-size: 13px;">React.js
-                                    </p>
-                                    <p class="resume-p" style="font-size: 13px;">Javascript
-                                    </p>
-                                    <p class="resume-p" style="font-size: 13px;">CSS
-                                    </p>
-                                    <p class="resume-p" style="font-size: 13px;">HTML
-                                    </p>
-                                    <p class="resume-p" style="font-size: 13px;">PostgreSQL</p>
-                                    <p class="resume-p" style="font-size: 13px;">Oracle PL/SQL
-                                    </p>
-                                    <p class="resume-p" style="font-size: 13px;">AWS</p>
-                                    <p class="resume-p" style="font-size: 13px;">GCP</p>
-                                    <p class="resume-p" style="font-size: 13px;">Heroku</p>
-                                    <p class="resume-p" style="font-size: 13px;">Twilio</p>
-                                    <p class="resume-p" style="font-size: 13px;">Sendgrid</p>
-                                </div>
+                            </div>
+                            <div style="display: flex; gap: 0px 10px; flex-wrap: wrap; max-width: 600px;">
+                                <p class="resume-p" style="font-size: 13px;">Node.js</p>
+                                <p class="resume-p" style="font-size: 13px;">React.js
+                                </p>
+                                <p class="resume-p" style="font-size: 13px;">Javascript
+                                </p>
+                                <p class="resume-p" style="font-size: 13px;">CSS
+                                </p>
+                                <p class="resume-p" style="font-size: 13px;">HTML
+                                </p>
+                                <p class="resume-p" style="font-size: 13px;">PostgreSQL</p>
+                                <p class="resume-p" style="font-size: 13px;">Oracle PL/SQL
+                                </p>
+                                <p class="resume-p" style="font-size: 13px;">AWS</p>
+                                <p class="resume-p" style="font-size: 13px;">GCP</p>
+                                <p class="resume-p" style="font-size: 13px;">Heroku</p>
+                                <p class="resume-p" style="font-size: 13px;">Twilio</p>
+                                <p class="resume-p" style="font-size: 13px;">Sendgrid</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="sample-projects-container">
-                <p class="resume-p">AI PDF Reader</p>
-                <p class="resume-p">Real Estate Calculators</p>
-                <p class="resume-p">Relationship Tracker</p>
-            </div>
-            <hr class="resume-hr">
         </div>
-        <script>
-            function run_resume() {
-                const get_el = (el) => {
-                    return document.getElementById(el) || null
-                }
-                const make_el = (el) => {
-                    return document.createElement(el)
-                }
-                const start_date = new Date()
-                const start_year = start_date.getFullYear() ?. toString().slice(-2)
-                const years = 5
-                const timeline = 365.25 * years
-                const timeline_moments = [
-                    {
-                        label: start_year - 0,
-                        color: 'black',
-                        line: 0,
-                        background: 'hsl(0, 0%, 70%)',
-                        datapoints: Array.from(
+        <div class="sample-projects-container">
+            <p class="resume-p">AI PDF Reader</p>
+            <p class="resume-p">Real Estate Calculators</p>
+            <p class="resume-p">Relationship Tracker</p>
+        </div>
+        <hr class="resume-hr">
+    </div>
+    <script>
+        function run_resume() {
+            const get_el = (el) => {
+                return document.getElementById(el) || null
+            }
+            const make_el = (el) => {
+                return document.createElement(el)
+            }
+            const start_date = new Date()
+            const start_year = start_date.getFullYear()?.toString().slice(-2)
+            const years = 5
+            const timeline = 365.25 * years
+            const timeline_moments = [
+                {
+                    label: start_year - 0,
+                    color: 'black',
+                    line: 0,
+                    background: 'hsl(0, 0%, 70%)',
+                    datapoints: Array.from(
                         {
                             length: years
                         }, (_, index_point) => ({
                             position: {
                                 start: index_point === 0
                                     ? '-2%'
-                                    : `${
-                                        (index_point) * 24.3
+                                    : `${(index_point) * 24.3
                                     }%`,
                                 height: '0px'
                             },
                             label: start_year - years + index_point + 2
                         })),
-                        position: {
-                            start: '0',
-                            height: '100%'
-                        }
-                    }, {
-                        line: 1,
-                        background: 'hsl(100, 60%, 60%)',
-                        // position: { start: '0', height: 30 },
-                        datapoints: [],
-                        timeline: {
-                            start_date: new Date('01-JUL-21'),
-                            end_date: new Date('07-MAR-22'),
-                            add_position: true
-                        }
-                    }, {
-                        line: 2,
-                        background: 'hsl(190, 60%, 60%)',
-                        // position: { start: '100', height: 30 },
-                        datapoints: [],
-                        timeline: {
-                            start_date: new Date('07-MAR-22'),
-                            end_date: new Date()
-                        }
-                    }, {
-                        line: 3,
-                        background: 'hsl(280, 60%, 60%)',
-                        // position: { start: '200', height: 30 },
-                        datapoints: [],
-                        left: 10,
-                        timeline: {
-                            start_date: new Date('01-JAN-23'),
-                            end_date: new Date()
-                        }
+                    position: {
+                        start: '0',
+                        height: '100%'
                     }
-                ]
-                const run_timeline = () => {
-                    const timeline_container = get_el('timeline')
-                    const timeline_length = timeline_container.offsetHeight
-                    const month_length = timeline_length / ((years - 1) * 12)
-                    timeline_moments.map(item => {
-                        const line_el = make_el('div')
-                        line_el.classList.add('line')
-                        let diff_mths = 0
-                        let diff_start_mths = 0
-                        if (item.timeline) {
-                            diff_start_mths = (item
+                }, {
+                    line: 1,
+                    background: 'hsl(100, 60%, 60%)',
+                    // position: { start: '0', height: 30 },
+                    datapoints: [],
+                    timeline: {
+                        start_date: new Date('01-JUL-21'),
+                        end_date: new Date('07-MAR-22'),
+                        add_position: true
+                    }
+                }, {
+                    line: 2,
+                    background: 'hsl(190, 60%, 60%)',
+                    // position: { start: '100', height: 30 },
+                    datapoints: [],
+                    timeline: {
+                        start_date: new Date('07-MAR-22'),
+                        end_date: new Date()
+                    }
+                }, {
+                    line: 3,
+                    background: 'hsl(280, 60%, 60%)',
+                    // position: { start: '200', height: 30 },
+                    datapoints: [],
+                    left: 10,
+                    timeline: {
+                        start_date: new Date('01-JAN-23'),
+                        end_date: new Date()
+                    }
+                }
+            ]
+            const run_timeline = () => {
+                const timeline_container = get_el('timeline')
+                const timeline_length = timeline_container.offsetHeight
+                const month_length = timeline_length / ((years - 1) * 12)
+                timeline_moments.map(item => {
+                    const line_el = make_el('div')
+                    line_el.classList.add('line')
+                    let diff_mths = 0
+                    let diff_start_mths = 0
+                    if (item.timeline) {
+                        diff_start_mths = (item
+                            .timeline
+                            .start_date
+                            .valueOf() - (new Date('01-JAN-21')).valueOf()) / 1000 / 2_629_800
+                        diff_mths = (item
+                            .timeline
+                            .end_date
+                            .valueOf() - item
                                 .timeline
                                 .start_date
-                                .valueOf() - (new Date('01-JAN-21')).valueOf()) / 1000 / 2 _629_800
-                            diff_mths = (item
-                                .timeline
-                                .end_date
-                                .valueOf() - item
-                                .timeline
-                                .start_date
-                                .valueOf()) / 1000 / 2 _629_800
-                        }
-                        line_el.style.top = item ?. position ?. start || `${
-                            diff_start_mths * month_length
+                                .valueOf()) / 1000 / 2_629_800
+                    }
+                    line_el.style.top = item?.position?.start || `${diff_start_mths * month_length
                         }px`
-                        line_el.style.height = item ?. position ?. height || `${
-                            diff_mths * month_length
+                    line_el.style.height = item?.position?.height || `${diff_mths * month_length
                         }px`
-                        line_el.style.backgroundColor = item
-                            .background
-                            if (item.left) {
-                                line_el.style.width = '6px'
-                                line_el.style.marginLeft = '4px'
-                            }
-                            timeline_container
-                            .appendChild(line_el)
-                            item
-                            .datapoints
-                            .map(point => {
-                                const length = line_el.offsetHeight
-                                const circle_el = make_el('div')
-                                circle_el.style.top = point.position.start
-                                const text_el = make_el('p')
-                                text_el.innerText = point
-                                    .label
-                                    circle_el
-                                    .appendChild(text_el)
-                                    circle_el
-                                    .classList
-                                    .add('circle')
-                                line_el
+                    line_el.style.backgroundColor = item
+                        .background
+                    if (item.left) {
+                        line_el.style.width = '6px'
+                        line_el.style.marginLeft = '4px'
+                    }
+                    timeline_container
+                        .appendChild(line_el)
+                    item
+                        .datapoints
+                        .map(point => {
+                            const length = line_el.offsetHeight
+                            const circle_el = make_el('div')
+                            circle_el.style.top = point.position.start
+                            const text_el = make_el('p')
+                            text_el.innerText = point
+                                .label
+                            circle_el
+                                .appendChild(text_el)
+                            circle_el
+                                .classList
+                                .add('circle')
+                            line_el
                                 .appendChild(circle_el)
                         })
                 })
-            } run_timeline()
+            }
+            run_timeline()
             function check_timeline() {
                 if (get_el('timeline')) {
                     run_timeline()
@@ -1416,12 +1401,12 @@
                         return day + "<sup>th</sup>";
                 }
             }
-            const formattedDate = `${month} ${
-                getDayWithSuffix(day)
-            }, ${year}`;
+            const formattedDate = `${month} ${getDayWithSuffix(day)
+                }, ${year}`;
             time_driggs_title.innerHTML = 'Present'
             // `${formattedDate}`
-        }run_resume()
-        </script>
-    </body>
+        } run_resume()
+    </script>
+</body>
+
 </html>

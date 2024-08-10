@@ -4,6 +4,7 @@ const path = require("path");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.addPassthroughCopy("js");
     eleventyConfig.addPassthroughCopy("svgdrawings/my_svgs");
 
     eleventyConfig.addPassthroughCopy("css");
