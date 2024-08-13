@@ -42,7 +42,6 @@
         }
 
         input[type="range"] {
-            -webkit-appearance: none;
             width: 100%;
             height: 8px;
             background: #ddd;
@@ -88,6 +87,16 @@
             font-size: 24px;
             font-weight: bold;
             margin-top: 20px;
+        }
+
+        .slider-title-container {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .slider-day-btn {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -135,7 +144,16 @@
             <p>Record your relationship each day and keep track of how your days are going.</p>
             <div>
                 <div class="slider-container">
-                    <h1>Rate Your Relationship</h1>
+                    <div class="slider-title-container">
+                        <div id="slider_day_btn_back" class="slider-day-btn">
+                            <img src='../svgdrawings/my_svgs/chev_back_arrow.svg' />
+                        </div>
+                        <h1 id="current_date">Rate Your Day</h1>
+                        <div id="slider_day_btn_forward" class="slider-day-btn">
+                            <img src='../svgdrawings/my_svgs/chev_forward_arrow.svg' />
+                        </div>
+
+                    </div>
                     <div class="slider-wrapper">
                         <input type="range" id="relationshipSlider" min="1" max="10" value="5" step="1" />
                         <div class="slider-labels" id="sliderLabels"></div>
@@ -184,6 +202,7 @@
     </div>
     <script type="module">
         import utils from '/js/utils.mjs'
+        let days_back = 0
         utils.set_storage('name', 'andrew')
 
         const slider = document.getElementById('relationshipSlider');
@@ -215,7 +234,26 @@
         generateLabels();
         updateSliderValue();
 
+        function get_current_day(days_back) {
+            return new Date()?.toLocaleDateString()
+        }
 
+        function set_date() {
+            utils.get_el("current_date").innerText = utils.get_date_format(utils.get_days_ago(days_back), 'day, mon dd')
+        }
+
+        function nav_days(e) {
+            console.log(e.currentTarget)
+            if (e.currentTarget.id.includes('back')) {
+                days_back += 1
+            } else {
+                days_back -= 1
+            }
+            set_date()
+        }
+        utils.get_el("slider_day_btn_back").addEventListener('click', nav_days)
+        utils.get_el("slider_day_btn_forward").addEventListener('click', nav_days)
+        set_date()
     </script>
 </body>
 
