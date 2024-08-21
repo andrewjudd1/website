@@ -149,6 +149,26 @@ function get_date_format(date, format = 'yyyy-mm-dd') {
     }
 }
 
+const validate_number = (num, dec) => {
+    if (!num) {
+        return 0
+    }
+    if (num?.toString()?.replace(/[$€£¥,%]/g, '') === '-') {
+        return 0
+    }
+    num = num?.toString()?.replace(/[$€£¥,%]/g, '')
+    num = num?.split('.')
+    num = `${num?.[0]?.replace(/[^0-9-]/g, '')}${num?.[1] ? `.${num?.[1]?.replace(/[^0-9-]/g, '')}` : ''}`
+    num = Number(num)
+    if (isNaN(num)) {
+        return 0
+    }
+    if (dec >= 0) {
+        num = Number(num.toFixed(dec))
+    }
+    return num
+}
+
 
 export default {
     uuid,
@@ -160,5 +180,6 @@ export default {
     get_date,
     get_el,
     get_date_format,
-    get_days_ago
+    get_days_ago,
+    validate_number
 }

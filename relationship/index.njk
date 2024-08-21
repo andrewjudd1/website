@@ -31,13 +31,14 @@
         .slider-container {
             text-align: center;
             background: white;
-            padding: 20px;
+            padding: 0px 20px 20px 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
         }
 
         .slider-wrapper {
-            margin: 20px 0;
+            margin: 10px 0;
             position: relative;
         }
 
@@ -72,15 +73,13 @@
         .slider-labels {
             display: flex;
             justify-content: space-between;
-            margin-top: 10px;
             position: relative;
         }
 
         .slider-labels span {
-            position: absolute;
-            bottom: -20px;
             /* Adjust based on label height */
-            font-size: 14px;
+            writing-mode: vertical-lr;
+            font-size: 12px;
         }
 
         .slider-value {
@@ -90,12 +89,22 @@
         }
 
         .slider-title-container {
+            font-size: 12px;
             display: flex;
             justify-content: space-around;
+            align-items: center;
 
         }
 
         .slider-day-btn {
+            background: unset;
+            outline: unset;
+            border: unset;
+            cursor: pointer;
+        }
+
+        .slider-btn-img {
+            width: 40px;
             cursor: pointer;
         }
     </style>
@@ -106,43 +115,53 @@
     <div class="home_main_wrapper">
         <main class="home_main">
             <h1>Relationship Tracker</h1>
-            <p class="lg_txt">Try to get a 3:1 ratio!
+            <p class="sm_txt">Try to get a 3:1 ratio! Record your relationship each day and keep track of how your days
+                are going.
             </p>
-            <p>Record your relationship each day and keep track of how your days are going.</p>
+            <p></p>
             <div>
                 <div class="slider-container">
+                    <svg id="svg" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background Circle -->
+                        <circle class="circle background" cx="150" cy="150" r="100" />
+
+                        <!-- Progress Circle -->
+                        <circle id="progressCircle" class="circle progress" cx="150" cy="150" r="100" />
+                        <foreignObject x="50" y="50" width="200" height="200">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">
+                                <div style="text-align: center;">
+                                    <h1 style="margin: 0;" id="ratio_str_title">3 : 1</h1>
+                                </div>
+                            </div>
+                        </foreignObject>
+                    </svg>
                     <div class="slider-title-container">
-                        <div id="slider_day_btn_back" class="slider-day-btn">
-                            <img src='../svgdrawings/my_svgs/chev_back_arrow.svg' />
-                        </div>
-                        <h1 id="current_date">Rate Your Day</h1>
-                        <div id="slider_day_btn_forward" class="slider-day-btn">
-                            <img src='../svgdrawings/my_svgs/chev_forward_arrow.svg' />
+                        <button id="slider_day_btn_back" class="slider-day-btn">
+                            <img class="slider-btn-img" src='../svgdrawings/my_svgs/chev_back_arrow.svg' />
+                        </button>
+                        <h1 id="current_date" style="margin-left: 20px;">Today</h1>
+                        <div style="display: flex; align-items: center;">
+                            <button class="slider-day-btn" id="return_day_btn">
+                                <img class="slider-btn-img" style="width: 20px;"
+                                    src='../svgdrawings/my_svgs/calendar_icon_3.svg' />
+                            </button>
+
+                            <button id="slider_day_btn_forward" class="slider-day-btn">
+                                <img class="slider-btn-img" src='../svgdrawings/my_svgs/chev_forward_arrow.svg' />
+                            </button>
                         </div>
 
                     </div>
                     <div class="slider-wrapper">
-                        <input type="range" id="relationshipSlider" min="1" max="10" value="5" step="1" />
-                        <div class="slider-labels" id="sliderLabels"></div>
-                        <div id="sliderValue" class="slider-value">5</div>
+                        <input list="sliderLabels" type="range" id="relationshipSlider" min="1" max="10" value="1"
+                            step="1" />
+                        <datalist class="slider-labels" id="sliderLabels"></datalist>
+                        <div id="sliderValue" class="slider-value">1</div>
                     </div>
                 </div>
             </div>
-            <svg id="svg" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-                <!-- Background Circle -->
-                <circle class="circle background" cx="150" cy="150" r="100" />
 
-                <!-- Progress Circle -->
-                <circle id="progressCircle" class="circle progress" cx="150" cy="150" r="100" />
-                <foreignObject x="50" y="50" width="200" height="200">
-                    <div xmlns="http://www.w3.org/1999/xhtml"
-                        style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">
-                        <div style="text-align: center;">
-                            <h1 style="margin: 0;">3 : 1</h1>
-                        </div>
-                    </div>
-                </foreignObject>
-            </svg>
 
             <script>
                 function updateCircleStroke(percentage) {
@@ -163,7 +182,7 @@
 
                 // Example usage: Update the stroke to 75%
 
-                updateCircleStroke((5 / 10) * 100);
+
             </script>
         </main>
     </div>
@@ -171,13 +190,47 @@
         import utils from '/js/utils.mjs'
         let days_back = 0
         utils.set_storage('name', 'andrew')
-
+        const days = utils.get_storage('days') || {}
+        console.log('days', days)
         const slider = document.getElementById('relationshipSlider');
         const sliderValue = document.getElementById('sliderValue');
         const sliderLabels = document.getElementById('sliderLabels');
+        let bad_days = 0
+        let good_days = 0
+        let ratio_str = '3 : 1'
+        function get_ratio() {
+            bad_days = 0
+            good_days = 0
+            Object.entries(days).forEach(([day, value]) => {
+                value.score = utils.validate_number(value.score)
+                if (value.score < 5) {
+                    bad_days += 1
+                } else {
+                    good_days += 1
+                }
+            })
+            const ratio = good_days / 3;
+            const bad_num = bad_days / ratio;
+            ratio_str = `3 : ${utils.validate_number(bad_num) || 1}`
+            utils.get_el('ratio_str_title').textContent = ratio_str
+            let percentage = good_days / ((good_days + bad_days) || 1)
+            if (percentage > 1) {
+                percentage = 1
+            }
+            updateCircleStroke(percentage * 100);
 
+        }
+        get_ratio()
         function updateSliderValue() {
             sliderValue.textContent = slider.value;
+
+            if (!days?.[get_current_day(days_back)]) {
+                days[get_current_day(days_back)] = { score: slider.value }
+            } else {
+                days[get_current_day(days_back)] = { ...days[get_current_day(days_back)], score: slider.value }
+            }
+            utils.set_storage('days', days)
+            get_ratio()
         }
 
         function generateLabels() {
@@ -188,9 +241,14 @@
             // set labels distance in an object
             for (let i = min; i <= max; i += step) {
                 const label = document.createElement('span');
+                label.onclick = (e) => {
+                    slider.value = i
+                    updateSliderValue()
+                }
+                label.style = 'padding: 10px -4px 5px 5px; cursor: pointer;'
                 label.textContent = i;
                 const percentage = ((i - min) / (max - min)) * 100;
-                label.style.left = `${percentage - 1}%`;
+                // label.style.left = `${percentage - 1}%`;
                 sliderLabels.appendChild(label);
             }
         }
@@ -199,10 +257,15 @@
 
         // Initialize the slider labels and value display
         generateLabels();
+        if (days?.[get_current_day(days_back)]) {
+            slider.value = days?.[get_current_day(days_back)]?.score
+        }
         updateSliderValue();
 
         function get_current_day(days_back) {
-            return new Date()?.toLocaleDateString()
+            const date = new Date()
+            date.setDate(date.getDate() - days_back)
+            return date?.toLocaleDateString()
         }
 
         function set_date() {
@@ -210,14 +273,25 @@
         }
 
         function nav_days(e) {
-            console.log(e.currentTarget)
             if (e.currentTarget.id.includes('back')) {
                 days_back += 1
+                slider.value = days?.[get_current_day(days_back)]?.score || 1
+                sliderValue.textContent = days?.[get_current_day(days_back)]?.score || 1
             } else {
                 days_back -= 1
+                slider.value = days?.[get_current_day(days_back)]?.score || 1
+                sliderValue.textContent = days?.[get_current_day(days_back)]?.score || 1
             }
             set_date()
         }
+
+        function return_today(e) {
+            days_back = 0
+            slider.value = days?.[get_current_day(days_back)]?.score || 1
+            sliderValue.textContent = days?.[get_current_day(days_back)]?.score || 1
+            set_date()
+        }
+        utils.get_el("return_day_btn").addEventListener('click', return_today)
         utils.get_el("slider_day_btn_back").addEventListener('click', nav_days)
         utils.get_el("slider_day_btn_forward").addEventListener('click', nav_days)
         set_date()
