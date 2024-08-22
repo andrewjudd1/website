@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
     <title>Document</title>
     <link rel="stylesheet" href="/css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/lz-string@1.5.0/libs/lz-string.min.js"></script>
@@ -42,17 +43,30 @@
             position: relative;
         }
 
-        input[type="range"] {
+        .slider {
+            -webkit-appearance: none;
+            appearance: none;
             width: 100%;
-            height: 8px;
-            background: #ddd;
-            border-radius: 5px;
+            height: 15px;
+            background: linear-gradient(to right,
+                    gray, black);
             outline: none;
             opacity: 0.8;
-            transition: opacity .15s ease-in-out;
+            transition: opacity 0.4s;
+            border-radius: 15px;
+
+
+
         }
 
-        input[type="range"]::-webkit-slider-thumb {
+        .slider::-webkit-slider-runnable-track {
+            /* height: 8px; */
+            /* Track height */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+        }
+
+        .slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
             width: 25px;
@@ -60,9 +74,10 @@
             background: #4caf50;
             cursor: pointer;
             border-radius: 50%;
+            opacity: 0;
         }
 
-        input[type="range"]::-moz-range-thumb {
+        .slider::-moz-range-thumb {
             width: 25px;
             height: 25px;
             background: #4caf50;
@@ -78,7 +93,7 @@
 
         .slider-labels span {
             /* Adjust based on label height */
-            writing-mode: vertical-lr;
+            /* writing-mode: vertical-lr; */
             font-size: 12px;
         }
 
@@ -154,8 +169,8 @@
 
                     </div>
                     <div class="slider-wrapper">
-                        <input list="sliderLabels" type="range" id="relationshipSlider" min="1" max="10" value="1"
-                            step="1" />
+                        <input list="sliderLabels" type="range" id="relationshipSlider" class="slider" min="1" max="10"
+                            value="1" step="1" />
                         <datalist class="slider-labels" id="sliderLabels"></datalist>
                         <div id="sliderValue" class="slider-value">1</div>
                     </div>
@@ -211,7 +226,7 @@
             })
             const ratio = good_days / 3;
             const bad_num = bad_days / ratio;
-            ratio_str = `3 : ${utils.validate_number(bad_num) || 1}`
+            ratio_str = `3 : ${utils.validate_number(bad_num, 2) || 1}`
             utils.get_el('ratio_str_title').textContent = ratio_str
             let percentage = good_days / ((good_days + bad_days) || 1)
             if (percentage > 1) {
@@ -230,6 +245,14 @@
                 days[get_current_day(days_back)] = { ...days[get_current_day(days_back)], score: slider.value }
             }
             utils.set_storage('days', days)
+            const value = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+
+            if (slider.value < 5) {
+                slider.style.background = `linear-gradient(to right, #00ce07 0%, #4CAF50 ${value}%, #ddd ${value}%, #ddd 100%)`;
+            } else {
+                slider.style.background = `linear-gradient(to right, #00ce07 0%, #4CAF50 ${value}%, #ddd ${value}%, #ddd 100%)`;
+
+            }
             get_ratio()
         }
 
@@ -245,8 +268,8 @@
                     slider.value = i
                     updateSliderValue()
                 }
-                label.style = 'padding: 10px -4px 5px 5px; cursor: pointer;'
-                label.textContent = i;
+                label.style = 'padding: 0px 0px 5px 5px; cursor: pointer;'
+                label.textContent = '|';
                 const percentage = ((i - min) / (max - min)) * 100;
                 // label.style.left = `${percentage - 1}%`;
                 sliderLabels.appendChild(label);
