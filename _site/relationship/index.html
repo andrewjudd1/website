@@ -246,6 +246,16 @@
         let bad_days = 0
         let good_days = 0
         let ratio_str = '3 : 1'
+        function update_slider_tracker() {
+            const value = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+
+            if (slider.value < 5) {
+                slider.style.background = `linear-gradient(to right, #00ce07 0%, #4CAF50 ${value}%, #ddd ${value}%, #ddd 100%)`;
+            } else {
+                slider.style.background = `linear-gradient(to right, #00ce07 0%, #4CAF50 ${value}%, #ddd ${value}%, #ddd 100%)`;
+
+            }
+        }
         function get_ratio() {
             bad_days = 0
             good_days = 0
@@ -259,6 +269,7 @@
             })
             const ratio = good_days / 3;
             const bad_num = bad_days / ratio;
+
             ratio_str = `3 : ${utils.validate_number(bad_num, 2) || 1}`
             utils.get_el('ratio_str_title').textContent = ratio_str
             let percentage = good_days / ((good_days + bad_days) || 1)
@@ -266,6 +277,7 @@
                 percentage = 1
             }
             updateCircleStroke(percentage * 100);
+
 
         }
         get_ratio()
@@ -278,14 +290,8 @@
                 days[get_current_day(days_back)] = { ...days[get_current_day(days_back)], score: slider.value }
             }
             utils.set_storage('days', days)
-            const value = (slider.value - slider.min) / (slider.max - slider.min) * 100;
-
-            if (slider.value < 5) {
-                slider.style.background = `linear-gradient(to right, #00ce07 0%, #4CAF50 ${value}%, #ddd ${value}%, #ddd 100%)`;
-            } else {
-                slider.style.background = `linear-gradient(to right, #00ce07 0%, #4CAF50 ${value}%, #ddd ${value}%, #ddd 100%)`;
-
-            }
+            console.log(slider.value)
+            update_slider_tracker()
             get_ratio()
         }
 
@@ -338,6 +344,7 @@
                 slider.value = days?.[get_current_day(days_back)]?.score || 1
                 sliderValue.textContent = days?.[get_current_day(days_back)]?.score || 1
             }
+            update_slider_tracker()
             set_date()
         }
 
@@ -345,6 +352,8 @@
             days_back = 0
             slider.value = days?.[get_current_day(days_back)]?.score || 1
             sliderValue.textContent = days?.[get_current_day(days_back)]?.score || 1
+            update_slider_tracker()
+
             set_date()
         }
         utils.get_el("return_day_btn").addEventListener('click', return_today)
