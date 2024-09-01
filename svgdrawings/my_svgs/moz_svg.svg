@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+    <rect width="100%" height="100%" fill="red" />
+    <circle cx="150" cy="100" r="80" fill="green" />
+    <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>
+    <path stroke="aliceblue" fill="none" stroke-width="2"
+        d="M 10 10 L 10 10 L 10 20 L 20 20 L 20 10 Z C 10 20, 20 20, 20 10 S 25 30, 30 10" />
+    <path stroke="beige" fill="transparent" stroke-width="2" d="M 10 30 Q 60 0 110 30 T 220 30 T 330 30" />
+</svg>

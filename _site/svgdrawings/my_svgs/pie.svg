@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="50" r="50" fill="lightgray" stroke="lightgray" stroke-width="1" />
+    <path d="M 50 50 A 50 50, 0, 0, 1, 100 0 L 100 50" fill="green" />
+    <path d="M 50 50 A 50 50, 0, 0, 0, 100 100 L 100 50" />
+    <path d="M 100 0 A 50 50, 0, 0, 1, 149.24 41.318 L 100 50" fill="blue" />
+    <path d="M 150 50 A 50 50, 0, 0, 1, 100 100 L 100 50" fill="red" />
+</svg>
